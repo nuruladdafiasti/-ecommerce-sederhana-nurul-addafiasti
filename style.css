@@ -1,0 +1,152 @@
+/* RESET & GLOBAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #fafafa;
+    color: #333;
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    background: #ffffff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: #a3896b;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li { margin-left: 20px; }
+.nav-links a { text-decoration: none; color: #444; font-size: 0.85rem; }
+
+/* HERO SECTION (Sederhana) */
+.hero {
+    height: 40vh; /* Perkecil tinggi hero */
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                url('https://images.unsplash.com/photo-1508685096489-7aac291bd5b3?w=1200');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+}
+
+.hero-content h1 { font-size: 2.2rem; }
+
+/* --- GRID PRODUK (PERBAIKAN UTAMA) --- */
+.container {
+    max-width: 900px; /* Batasi lebar keseluruhan produk */
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 1.8rem;
+    font-family: 'Playfair Display', serif;
+}
+
+.product-grid {
+    display: grid;
+    /* Tetap 2 kolom, tapi ukurannya menyesuaikan isi */
+    grid-template-columns: repeat(2, minmax(0, 1fr)); 
+    gap: 25px; /* Jarak antar kotak */
+}
+
+/* Kartu Produk (PERBAIKAN UKURAN) */
+.product-card {
+    background: white;
+    padding: 15px; /* Kurangi padding dalam */
+    border-radius: 12px;
+    text-align: center;
+    transition: 0.3s;
+    border: 1px solid #eee;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+    overflow: hidden; /* Mencegah isi meluap */
+}
+
+.product-card:hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+/* Gambar Produk (DIPERBAIKAN) */
+.product-card img {
+    width: 100%; /* Lebar gambar mengikuti kotak */
+    height: 200px; /* Batasi tinggi gambar agar tidak besar */
+    object-fit: contain; /* Gambar akan proporsional tanpa terpotong/melar */
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+/* Teks Produk (Sesuai Gambar) */
+.product-card h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.price {
+    color: #a3896b;
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+/* Tombol (Sesuai Gambar) */
+.btn-add {
+    width: 100%;
+    padding: 10px;
+    background: #333; /* Warna gelap */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: 0.2s;
+}
+
+.btn-add:hover {
+    background: #555;
+}
+
+/* FOOTER */
+footer {
+    background: #222;
+    color: #888;
+    padding: 30px 20px;
+    text-align: center;
+    margin-top: 50px;
+    font-size: 0.8rem;
+}
+
+/* Responsif HP */
+@media (max-width: 600px) {
+    .product-grid {
+        grid-template-columns: 1fr; /* Jadi 1 kolom di HP */
+    }
+}
