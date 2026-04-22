@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toko Jam Tangan Online</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">Hasna Allshop</div>
+            <ul class="nav-links">
+                <li><a href="#">Beranda</a></li>
+                <li><a href="#produk">Produk</a></li>
+                <li><a href="#">Kategori</a></li>
+                <li class="cart-nav" onclick="checkoutAlert()">
+                    <span id="cart-icon">🛒 Keranjang (<span id="cart-count">0</span>)</span>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Selamat Datang di Toko Jam Tangan Online Hasna</h1>
+                <p>Koleksi jam tangan eksklusif untuk gaya hidup modern Anda.</p>
+                <a href="#produk" class="btn-hero">Jelajahi Sekarang</a>
+            </div>
+        </section>
+
+        <section id="produk" class="container">
+            <h2 class="section-title">Produk Unggulan</h2>
+            <div class="product-grid">
+                
+                <article class="product-card">
+                    <img src="img/jam tangan 1.jpg" alt="Minimalist White Watch">
+                    <h3>Minimalist White</h3>
+                    <p class="price">Rp 1.250.000</p>
+                    <button class="btn-add" onclick="tambahKeKeranjang('Minimalist White')">Tambah ke Keranjang</button>
+                </article>
+
+                <article class="product-card">
+                    <img src="img/jam tangan 2.jpg" alt="Classic Brown Watch">
+                    <h3>Classic Brown</h3>
+                    <p class="price">Rp 1.850.000</p>
+                    <button class="btn-add" onclick="tambahKeKeranjang('Classic Brown')">Tambah ke Keranjang</button>
+                </article>
+
+                <article class="product-card">
+                    <img src="img/jam tangan 3.webp" alt="Midnight Steel Watch">
+                    <h3>Midnight Steel</h3>
+                    <p class="price">Rp 2.100.000</p>
+                    <button class="btn-add" onclick="tambahKeKeranjang('Midnight Steel')">Tambah ke Keranjang</button>
+                </article>
+
+                <article class="product-card">
+                    <img src="img/jam tangan 4.jpg" alt="Deskripsi gambar wajib ada">
+                    <h3>Rose Gold Elegance</h3>
+                    <p class="price">Rp 2.450.000</p>
+                    <button class="btn-add" onclick="tambahKeKeranjang('Rose Gold Elegance')">Tambah ke Keranjang</button>
+                </article>
+
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-info">
+            <p>Kontak: hasnafiryatul@gmail.com | +62 895 365 699 800</p>
+            <p>&copy; 2026 Hasna Allshop | Hasna - Administrasi Bisnis 3</p>
+        </div>
+    </footer>
+
+    <script>
+        let jumlahBarang = 0;
+
+        function tambahKeKeranjang(namaProduk) {
+            jumlahBarang++;
+            document.getElementById('cart-count').innerText = jumlahBarang;
+            alert(namaProduk + " telah ditambahkan ke keranjang!");
+        }
+
+        function checkoutAlert() {
+            if(jumlahBarang > 0) {
+                alert("Anda memiliki " + jumlahBarang + " produk. Lanjut ke proses Checkout?");
+            } else {
+                alert("Keranjang Anda masih kosong!");
+            }
+        }
+    </script>
+
+</body>
+</html>
