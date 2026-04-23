@@ -1,4 +1,4 @@
-/* RESET & GLOBAL */
+/* RESET & GLOBAL - HITAM PUTIH */
 * {
     margin: 0;
     padding: 0;
@@ -7,18 +7,18 @@
 }
 
 body {
-    background-color: #fafafa;
-    color: #000000;
+    background-color: #000000; /* Background hitam */
+    color: #ffffff; /* Teks putih */
 }
 
-/* NAVBAR */
+/* NAVBAR - HITAM PUTIH */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 15px 5%;
-    background: #ffffff;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    background: #000000; /* Navbar hitam */
+    box-shadow: 0 2px 10px rgba(255,255,255,0.1); /* Shadow putih tipis */
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -27,7 +27,7 @@ body {
 .logo {
     font-family: 'Playfair Display', serif;
     font-size: 1.5rem;
-    color: #000000;
+    color: #ffffff; /* Logo putih */
     font-weight: bold;
 }
 
@@ -37,27 +37,36 @@ body {
 }
 
 .nav-links li { margin-left: 20px; }
-.nav-links a { text-decoration: none; color: #000000; font-size: 0.85rem; }
+.nav-links a { 
+    text-decoration: none; 
+    color: #ffffff; /* Link putih */
+    font-size: 0.85rem;
+    transition: opacity 0.2s;
+}
+.nav-links a:hover { opacity: 0.8; }
 
-/* HERO SECTION (Sederhana) */
+/* HERO SECTION - HITAM PUTIH */
 .hero {
-    height: 40vh; /* Perkecil tinggi hero */
-    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+    height: 40vh;
+    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), 
                 url('https://images.unsplash.com/photo-1508685096489-7aac291bd5b3?w=1200');
     background-size: cover;
     background-position: center;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
+    color: #ffffff;
     text-align: center;
 }
 
-.hero-content h1 { font-size: 2.2rem; }
+.hero-content h1 { 
+    font-size: 2.2rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8); /* Shadow hitam untuk kontras */
+}
 
-/* --- GRID PRODUK (PERBAIKAN UTAMA) --- */
+/* CONTAINER & GRID */
 .container {
-    max-width: 900px; /* Batasi lebar keseluruhan produk */
+    max-width: 900px;
     margin: 40px auto;
     padding: 0 20px;
 }
@@ -67,62 +76,65 @@ body {
     margin-bottom: 30px;
     font-size: 1.8rem;
     font-family: 'Playfair Display', serif;
+    color: #ffffff;
 }
 
+/* PRODUCT GRID - HITAM PUTIH */
 .product-grid {
     display: grid;
-    /* Tetap 2 kolom, tapi ukurannya menyesuaikan isi */
     grid-template-columns: repeat(2, minmax(0, 1fr)); 
-    gap: 25px; /* Jarak antar kotak */
+    gap: 25px;
 }
 
-/* Kartu Produk (PERBAIKAN UKURAN) */
 .product-card {
-    background: white;
-    padding: 15px; /* Kurangi padding dalam */
+    background: #ffffff; /* Kartu putih */
+    padding: 15px;
     border-radius: 12px;
     text-align: center;
     transition: 0.3s;
-    border: 1px solid #eee;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.03);
-    overflow: hidden; /* Mencegah isi meluap */
+    border: 2px solid #000000; /* Border hitam tebal */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    overflow: hidden;
+    position: relative;
 }
 
 .product-card:hover {
-    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    background: #f5f5f5; /* Abu-abu sangat terang saat hover */
+    box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+    transform: translateY(-5px);
+    border-color: #333333;
 }
 
-/* Gambar Produk (DIPERBAIKAN) */
 .product-card img {
-    width: 100%; /* Lebar gambar mengikuti kotak */
-    height: 200px; /* Batasi tinggi gambar agar tidak besar */
-    object-fit: contain; /* Gambar akan proporsional tanpa terpotong/melar */
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
     border-radius: 8px;
     margin-bottom: 15px;
+    filter: grayscale(100%) contrast(1.2); /* Gambar jadi B&W */
 }
 
-/* Teks Produk (Sesuai Gambar) */
 .product-card h3 {
     font-size: 1.1rem;
     font-weight: 600;
-    color: #000000;
+    color: #000000; /* Judul hitam */
     margin-bottom: 5px;
 }
 
 .price {
-    color: #000000;
+    color: #000000; /* Harga hitam */
     font-weight: 600;
     font-size: 1rem;
     margin-bottom: 15px;
 }
 
-/* Tombol (Sesuai Gambar) */
+/* TOMBOL - HITAM PUTIH */
 .btn-add {
     width: 100%;
-    padding: 10px;
-    background: #333; /* Warna gelap */
-    color: white;
-    border: none;
+    padding: 12px;
+    background: #000000; /* Tombol hitam */
+    color: #ffffff; /* Teks putih */
+    border: 2px solid #000000;
     border-radius: 6px;
     cursor: pointer;
     font-weight: 500;
@@ -131,22 +143,34 @@ body {
 }
 
 .btn-add:hover {
-    background: #555;
+    background: #ffffff; /* Hover jadi putih */
+    color: #000000; /* Teks hitam */
+    border-color: #000000;
 }
 
-/* FOOTER */
+/* FOOTER - HITAM PUTIH */
 footer {
-    background: #222;
-    color: #888;
+    background: #000000; /* Footer hitam */
+    color: #ffffff; /* Teks putih */
     padding: 30px 20px;
     text-align: center;
     margin-top: 50px;
     font-size: 0.8rem;
+    border-top: 1px solid #333333;
 }
 
-/* Responsif HP */
+/* RESPONSIVE */
 @media (max-width: 600px) {
     .product-grid {
-        grid-template-columns: 1fr; /* Jadi 1 kolom di HP */
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+    
+    .navbar {
+        padding: 12px 5%;
     }
 }
