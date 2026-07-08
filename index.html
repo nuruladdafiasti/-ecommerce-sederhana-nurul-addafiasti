@@ -20,6 +20,13 @@
                     <span id="cart-icon">🛒 Keranjang (<span id="cart-count">0</span>)</span>
                 </li>
             </ul>
+            <div class="cart-icon" onclick="toggleCart()">
+
+🛒
+
+<span class="cart-count" id="cart-count">0</span>
+
+</div>
         </nav>
     </header>
 
@@ -37,146 +44,145 @@
             <div class="product-grid">
                 
                 <article class="product-card">
-                    <img src="flat1.jpeg" alt="flat shoes 1">
-                    <h3>flat shoes 1</h3>
-                    <p class="price">Rp 299.999</p>
-                    <button class="btn-add" onclick="tambahKeKeranjang('flat shoes 1')">Tambah ke Keranjang</button>
+                    <img src="long1.jpeg" alt="Shoes Darak long 1">
+                    <h3>Shoes Darak long 1</h3>
+                    <p class="price">Rp 599.999</p>
+                    <button class="btn-add" onclick="tambahKeKeranjang('Shoes Darak long 1')">Tambah ke Keranjang</button>
                 </article>
 
                 <article class="product-card">
-                    <img src="flat2.jpeg" alt="flat shoes 2">
-                    <h3>flat shoes 2</h3>
-                    <p class="price">Rp 399.999</p>
-                    <button class="btn-add" onclick="tambahKeKeranjang('flat shoes 2')">Tambah ke Keranjang</button>
+                    <img src="long2.jpeg" alt="Shoes Darak long 2">
+                    <h3>Shoes Darak long 2</h3>
+                    <p class="price">Rp 499.999</p>
+                    <button class="btn-add" onclick="tambahKeKeranjang('Shoes Darak long 2')">Tambah ke Keranjang</button>
                 </article>
 
                 <article class="product-card">
-                    <img src="flat3.jpeg" alt="flat shoes 3">
+                    <img src="short1.jpeg" alt="Shoes Darak short 1">
                     <h3>Shoes Darak Short 1</h3>
-                    <p class="price">Rp 299.999</p>
-                    <button class="btn-add" onclick="tambahKeKeranjang('flat shoes 3')">Tambah ke Keranjang</button>
-                </article>
-
-                <article class="product-card">
-                    <img src="flat4.jpeg" alt="flat shoes 4">
-                    <h3>flat shoes 4</h3>
-                    <p class="price">Rp 399.999</p>
-                    <button class="btn-add" onclick="tambahKeKeranjang('flat shoes 4')">Tambah ke Keranjang</button>
-                </article>
-
-                 <article class="product-card">
-                    <img src="heelsr1.jpeg" alt="heels shoes 1">
-                    <h3>heels shoes 1</h3>
-                    <p class="price">Rp 399.999</p>
-                    <button class="btn-add" onclick="tambahKeKeranjang('heels shoes 1')">Tambah ke Keranjang</button>
-                </article>
-
-                 <article class="product-card">
-                    <img src="heelsr2.jpeg" alt="heels shoes 2">
-                    <h3>heels shoes 2</h3>
-                    <p class="price">Rp 499.999</p>
-                    <button class="btn-add" onclick="tambahKeKeranjang('heels shoes 2')">Tambah ke Keranjang</button>
-                </article>
-
-   <article class="product-card">
-                    <img src="heelsr3.jpeg" alt="heels shoes 3">
-                    <h3>heels shoes 3</h3>
-                    <p class="price">Rp 399.999</p>
-                    <button class="btn-add" onclick="tambahKeKeranjang('heels shoes 3')">Tambah ke Keranjang</button>
-                </article>
-
-                <article class="product-card">
-                    <img src="heelsr4.jpeg" alt="heels shoes 4">
-                    <h3>Shoes heels shoes 4</h3>
-                    <p class="price">Rp 499.999</p>
-                    <button class="btn-add" onclick="tambahKeKeranjang('heels shoes 4')">Tambah ke Keranjang</button>
-                </article>
-
-                
-                <article class="product-card">
-                    <img src="sn1.jpeg" alt="sneakers shoes 1">
-                    <h3>sneakers shoes 1</h3>
-                    <p class="price">Rp 499.999</p>
-                    <button class="btn-add" onclick="tambahKeKeranjang('sneakers shoes 1')">Tambah ke Keranjang</button>
-                 </article>
-
-                 <article class="product-card">
-                    <img src="sn2.jpeg" alt="sneakers shoes 2">
-                    <h3>sneakers shoes 2</h3>
                     <p class="price">Rp 599.999</p>
-                    <button class="btn-add" onclick="tambahKeKeranjang('sneakers shoes 2')">Tambah ke Keranjang</button>
+                    <button class="btn-add" onclick="tambahKeKeranjang('Shoes Darak Short 1')">Tambah ke Keranjang</button>
                 </article>
 
                 <article class="product-card">
-                    <img src="sn3.jpeg" alt="sneakers shoes 3">
-                    <h3>sneakers shoes 3</h3>
+                    <img src="short2.jpeg" alt="Shoes Darak long 2">
+                    <h3>Shoes Darak short 2</h3>
                     <p class="price">Rp 499.999</p>
-                    <button class="btn-add" onclick="tambahKeKeranjang('sneakers shoes 3')">Tambah ke Keranjang</button>
+                    <button class="btn-add" onclick="tambahKeKeranjang('Shoes Darak short 2')">Tambah ke Keranjang</button>
                 </article>
 
                 <article class="product-card">
-                    <img src="sn4.jpeg" alt="sneakers shoes 4">
-                    <h3>sneakers shoes 4</h3>
-                    <p class="price">Rp 599.999</p>
-                    <button class="btn-add" onclick="tambahKeKeranjang('sneakers shoes 4')">Tambah ke Keranjang</button>
-                </article>
-
-                <article class="product-card">
-                    <img src="run1.jpeg" alt="running shoes 1">
-                    <h3>running shoes 1</h3>
-                    <p class="price">Rp 699.999</p>
-                    <button class="btn-add" onclick="tambahKeKeranjang('running shoes 1')">Tambah ke Keranjang</button>
-                </article>
-
-                <article class="product-card">
-                    <img src="run2.jpeg" alt="running shoes 2">
-                    <h3>running shoes 2</h3>
-                    <p class="price">Rp 599.999</p>
-                    <button class="btn-add" onclick="tambahKeKeranjang('running shoes 2')">Tambah ke Keranjang</button>
-                </article>
-
-                <article class="product-card">
-                    <img src="run3.jpeg" alt="running shoes 3">
-                    <h3>running shoes 3</h3>
-                    <p class="price">Rp 699.999</p>
-                    <button class="btn-add" onclick="tambahKeKeranjang('running shoes 3')">Tambah ke Keranjang</button>
-                </article>
-
-                <article class="product-card">
-                    <img src="run4.jpeg" alt="running shoes 4">
-                    <h3>running shoes 4</h3>
-                    <p class="price">Rp 599.999</p>
-                    <button class="btn-add" onclick="tambahKeKeranjang('running shoes 4')">Tambah ke Keranjang</button>
-                </article>
-
-                <article class="product-card">
-                    <img src="bt1.jpeg" alt="boots shoes 1">
-                    <h3>boots shoes 1</h3>
-                    <p class="price">Rp 699.999</p>
-                    <button class="btn-add" onclick="tambahKeKeranjang('boots shoes 1')">Tambah ke Keranjang</button>
-                </article>
-
-                <article class="product-card">
-                    <img src="bt2.jpeg" alt="boots shoes 2">
-                    <h3>boots shoes 2</h3>
+                    <img src="short2.jpeg" alt="Shoes Darak long 2">
+                    <h3>Shoes Darak short 5</h3>
                     <p class="price">Rp 799.999</p>
-                    <button class="btn-add" onclick="tambahKeKeranjang('boots shoes 2')">Tambah ke Keranjang</button>
+                    <button class="btn-add" onclick="tambahKeKeranjang('Shoes Darak short 2')">Tambah ke Keranjang</button>
                 </article>
 
-                <article class="product-card">
-                    <img src="bt3.jpeg" alt="boots shoes 3">
-                    <h3>boots shoes 3</h3>
-                    <p class="price">Rp 699.999</p>
-                    <button class="btn-add" onclick="tambahKeKeranjang('boots shoes 3')">Tambah ke Keranjang</button>
-                </article>
-
-                <article class="product-card">
-                    <img src="bt4.jpeg" alt="boots shoes 4">
-                    <h3>boots shoes 4</h3>
+                   <article class="product-card">
+                    <img src="short2.jpeg" alt="Shoes Darak long 2">
+                    <h3>Shoes Darak short 6</h3>
                     <p class="price">Rp 799.999</p>
-                    <button class="btn-add" onclick="tambahKeKeranjang('boots shoes 4')">Tambah ke Keranjang</button>
+                    <button class="btn-add" onclick="tambahKeKeranjang('Shoes Darak short 2')">Tambah ke Keranjang</button>
                 </article>
-                
+
+                    <article class="product-card">
+                    <img src="short2.jpeg" alt="Shoes Darak long 2">
+                    <h3>Shoes Darak short 7</h3>
+                    <p class="price">Rp 799.999</p>
+                    <button class="btn-add" onclick="tambahKeKeranjang('Shoes Darak short 2')">Tambah ke Keranjang</button>
+                </article>
+
+                    <article class="product-card">
+                    <img src="short2.jpeg" alt="Shoes Darak long 2">
+                    <h3>Shoes Darak short 8</h3>
+                    <p class="price">Rp 799.999</p>
+                    <button class="btn-add" onclick="tambahKeKeranjang('Shoes Darak short 2')">Tambah ke Keranjang</button>
+                </article>
+                   
+                    <article class="product-card">
+                    <img src="short2.jpeg" alt="Shoes Darak long 2">
+                    <h3>Shoes Darak short 9</h3>
+                    <p class="price">Rp 799.999</p>
+                    <button class="btn-add" onclick="tambahKeKeranjang('Shoes Darak short 2')">Tambah ke Keranjang</button>
+                </article>
+
+                    <article class="product-card">
+                    <img src="short2.jpeg" alt="Shoes Darak long 2">
+                    <h3>Shoes Darak short 10</h3>
+                    <p class="price">Rp 799.999</p>
+                    <button class="btn-add" onclick="tambahKeKeranjang('Shoes Darak short 2')">Tambah ke Keranjang</button>
+                </article>
+
+                <article class="product-card">
+                    <img src="short2.jpeg" alt="Shoes Darak long 2">
+                    <h3>Shoes Darak short 11</h3>
+                    <p class="price">Rp 799.999</p>
+                    <button class="btn-add" onclick="tambahKeKeranjang('Shoes Darak short 2')">Tambah ke Keranjang</button>
+                </article>
+
+                <article class="product-card">
+                    <img src="short2.jpeg" alt="Shoes Darak long 2">
+                    <h3>Shoes Darak short 12</h3>
+                    <p class="price">Rp 799.999</p>
+                    <button class="btn-add" onclick="tambahKeKeranjang('Shoes Darak short 2')">Tambah ke Keranjang</button>
+                </article>
+
+                <article class="product-card">
+                    <img src="short2.jpeg" alt="Shoes Darak long 2">
+                    <h3>Shoes Darak short 13</h3>
+                    <p class="price">Rp 799.999</p>
+                    <button class="btn-add" onclick="tambahKeKeranjang('Shoes Darak short 2')">Tambah ke Keranjang</button>
+                </article>
+
+                <article class="product-card">
+                    <img src="short2.jpeg" alt="Shoes Darak long 2">
+                    <h3>Shoes Darak short 14</h3>
+                    <p class="price">Rp 799.999</p>
+                    <button class="btn-add" onclick="tambahKeKeranjang('Shoes Darak short 2')">Tambah ke Keranjang</button>
+                </article>
+
+                <article class="product-card">
+                    <img src="short2.jpeg" alt="Shoes Darak long 2">
+                    <h3>Shoes Darak short 15</h3>
+                    <p class="price">Rp 799.999</p>
+                    <button class="btn-add" onclick="tambahKeKeranjang('Shoes Darak short 2')">Tambah ke Keranjang</button>
+                </article>
+
+                <article class="product-card">
+                    <img src="short2.jpeg" alt="Shoes Darak long 2">
+                    <h3>Shoes Darak short 16</h3>
+                    <p class="price">Rp 799.999</p>
+                    <button class="btn-add" onclick="tambahKeKeranjang('Shoes Darak short 2')">Tambah ke Keranjang</button>
+                </article>
+
+                <article class="product-card">
+                    <img src="short2.jpeg" alt="Shoes Darak long 2">
+                    <h3>Shoes Darak short 17</h3>
+                    <p class="price">Rp 799.999</p>
+                    <button class="btn-add" onclick="tambahKeKeranjang('Shoes Darak short 2')">Tambah ke Keranjang</button>
+                </article>
+
+                <article class="product-card">
+                    <img src="short2.jpeg" alt="Shoes Darak long 2">
+                    <h3>Shoes Darak short 18</h3>
+                    <p class="price">Rp 799.999</p>
+                    <button class="btn-add" onclick="tambahKeKeranjang('Shoes Darak short 2')">Tambah ke Keranjang</button>
+                </article>
+
+                <article class="product-card">
+                    <img src="short2.jpeg" alt="Shoes Darak long 2">
+                    <h3>Shoes Darak short 19</h3>
+                    <p class="price">Rp 799.999</p>
+                    <button class="btn-add" onclick="tambahKeKeranjang('Shoes Darak short 2')">Tambah ke Keranjang</button>
+                </article>
+
+                <article class="product-card">
+                    <img src="short2.jpeg" alt="Shoes Darak long 2">
+                    <h3>Shoes Darak short 20</h3>
+                    <p class="price">Rp 799.999</p>
+                    <button class="btn-add" onclick="tambahKeKeranjang('Shoes Darak short 2')">Tambah ke Keranjang</button>
+                </article>
+
             </div>
         </section>
     </main>
@@ -205,6 +211,24 @@
             }
         }
     </script>
+<div class="cart-sidebar" id="cartSidebar">
 
+<h2>Keranjang Belanja</h2>
+
+<div id="cart-items"></div>
+
+<h3>Total : Rp <span id="total">0</span></h3>
+
+<button class="btn-add"
+onclick="addToCart('Nama Produk',250000)">
+Tambah ke Keranjang
+
+Checkout
+
+</button>
+
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
