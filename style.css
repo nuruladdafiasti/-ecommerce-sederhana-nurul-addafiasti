@@ -858,3 +858,27 @@ footer {
 
     .produk-item img { width: 45px; height: 45px; }
 }
+.search-box {
+    max-width: 400px;
+    margin: 0 auto 25px;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 12px 18px;
+    background: #1f1f1f;
+    border: 1px solid #444;
+    border-radius: 30px;
+    color: #fff;
+    font-family: inherit;
+    font-size: .9rem;
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: #ffffff;
+}
+
+.search-box input::placeholder {
+    color: #888;
+}
