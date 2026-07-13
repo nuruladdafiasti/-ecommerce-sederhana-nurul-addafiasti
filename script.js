@@ -262,9 +262,14 @@ function prosesCheckout(e) {
 
     const total = cart.reduce((sum, item) => sum + item.harga * item.qty, 0);
     const daftarBarang = cart.map(item => `${item.nama} x${item.qty}`).join(', ');
+    const nomorPesanan = 'DS-' + Math.floor(100000 + Math.random() * 900000);
 
-    document.getElementById('orderSummaryText').textContent =
-        `Terima kasih, ${nama}!\nPesanan: ${daftarBarang}\nTotal: Rp ${total.toLocaleString('id-ID')}\nPembayaran: ${metode}\nDikirim ke: ${alamat}`;
+    document.getElementById('successNama').textContent = nama;
+    document.getElementById('orderNomor').textContent = nomorPesanan;
+    document.getElementById('orderAlamat').textContent = alamat;
+    document.getElementById('orderMetode').textContent = metode;
+    document.getElementById('orderBarang').textContent = daftarBarang;
+    document.getElementById('orderTotal').textContent = 'Rp ' + total.toLocaleString('id-ID');
 
     document.getElementById('checkoutForm').style.display = 'none';
     document.getElementById('checkoutSuccess').style.display = 'block';
