@@ -102,13 +102,17 @@ function initDetailModal() {
                 card.querySelector('.stock').textContent;
             document.getElementById('detailDesc').textContent =
                 card.dataset.desc || 'Belum ada deskripsi untuk produk ini.';
+            document.getElementById('detailSizeSelect').value = '';
 
-            const tombolTambah = document.getElementById('detailAddBtn');
-            tombolTambah.onclick = () => {
-                tambahKeKeranjang(addBtn.dataset.id, addBtn.dataset.name, parseInt(addBtn.dataset.price, 10));
-                closeDetail();
-            };
-
+           const tombolTambah = document.getElementById('detailAddBtn');
+tombolTambah.onclick = () => {
+    const ukuran = document.getElementById('detailSizeSelect').value;
+    tambahKeKeranjang(addBtn.dataset.id, addBtn.dataset.name, parseInt(addBtn.dataset.price, 10), ukuran);
+    if (ukuran) {
+        document.getElementById('detailSizeSelect').value = '';
+        closeDetail();
+    }
+};
             document.getElementById('detailOverlay').classList.add('active');
         });
     });
@@ -121,13 +125,19 @@ function closeDetail() {
 // =======================================================
 // FITUR KERANJANG
 // =======================================================
-function tambahKeKeranjang(id, nama, harga) {
+function tambahKeKeranjang(id, nama, harga, ukuran) {
+    if (!ukuran) {
+        alert('Mohon pilih ukuran terlebih dahulu untuk ' + nama + '!');
+        return;
+    }
+
     if (stokBarang[id] <= 0) {
         alert('Maaf, stok ' + nama + ' sudah habis!');
         return;
     }
 
-    const itemAda = cart.find(item => item.id === id);
+    const cartId = id + '-' + ukuran; // id unik per produk+ukuran
+    const itemAda = cart.find(item => item.cartId === cartId);
     const qtyDiKeranjang = itemAda ? itemAda.qty : 0;
 
     if (qtyDiKeranjang + 1 > stokBarang[id]) {
@@ -138,29 +148,35 @@ function tambahKeKeranjang(id, nama, harga) {
     if (itemAda) {
         itemAda.qty++;
     } else {
-        cart.push({ id, nama, harga, qty: 1 });
+        cart.push({ cartId, id, nama, harga, ukuran, qty: 1 });
     }
 
     simpanCart();
     renderCart();
-    alert(nama + ' telah ditambahkan ke keranjang!');
+    alert(nama + ' (Ukuran ' + ukuran + ') telah ditambahkan ke keranjang!');
 }
 
-function ubahQty(id, perubahan) {
-    const item = cart.find(i => i.id === id);
+function ubahQty(cartId, perubahan) {
+    const item = cart.find(i => i.cartId === cartId);
     if (!item) return;
 
     const qtyBaru = item.qty + perubahan;
 
     if (qtyBaru <= 0) {
-        cart = cart.filter(i => i.id !== id);
-    } else if (qtyBaru > stokBarang[id]) {
+        cart = cart.filter(i => i.cartId !== cartId);
+    } else if (qtyBaru > stokBarang[item.id]) {
         alert('Stok tidak mencukupi!');
         return;
     } else {
         item.qty = qtyBaru;
     }
 
+    simpanCart();
+    renderCart();
+}
+
+function hapusItem(cartId) {
+    cart = cart.filter(i => i.cartId !== cartId);
     simpanCart();
     renderCart();
 }
@@ -182,18 +198,25 @@ function renderCart() {
         cartItemsEl.innerHTML = cart.map(item => `
             <div class="cart-item">
                 <div class="cart-item-info">
-                    <h4>${item.nama}</h4>
+                    <h4>${item.nama} <span style="color:#999;">(Uk. ${item.ukuran})</span></h4>
                     <span>Rp ${(item.harga * item.qty).toLocaleString('id-ID')}</span>
                     <div class="qty-controls">
-                        <button onclick="ubahQty('${item.id}', -1)">-</button>
+                        <button onclick="ubahQty('${item.cartId}', -1)">-</button>
                         <span>${item.qty}</span>
-                        <button onclick="ubahQty('${item.id}', 1)">+</button>
+                        <button onclick="ubahQty('${item.cartId}', 1)">+</button>
                     </div>
                 </div>
-                <button class="remove-item" onclick="hapusItem('${item.id}')">Hapus</button>
+                <button class="remove-item" onclick="hapusItem('${item.cartId}')">Hapus</button>
             </div>
         `).join('');
     }
+
+    const total = cart.reduce((sum, item) => sum + item.harga * item.qty, 0);
+    const jumlahBarang = cart.reduce((sum, item) => sum + item.qty, 0);
+
+    totalEl.textContent = total.toLocaleString('id-ID');
+    cartCountEl.textContent = jumlahBarang;
+}
 
     const total = cart.reduce((sum, item) => sum + item.harga * item.qty, 0);
     const jumlahBarang = cart.reduce((sum, item) => sum + item.qty, 0);
@@ -276,11 +299,14 @@ document.addEventListener('DOMContentLoaded', () => {
     renderCart();
 
     document.querySelectorAll('.btn-add').forEach(btn => {
-        btn.addEventListener('click', () => {
-            const { id, name, price } = btn.dataset;
-            tambahKeKeranjang(id, name, parseInt(price, 10));
-        });
+    btn.addEventListener('click', () => {
+        const { id, name, price } = btn.dataset;
+        const sizeSelect = btn.closest('.card-actions').querySelector('.size-select');
+        const ukuran = sizeSelect.value;
+        tambahKeKeranjang(id, name, parseInt(price, 10), ukuran);
+        if (ukuran) sizeSelect.value = ''; // reset pilihan setelah berhasil
     });
+});
 
     document.getElementById('formCheckout').addEventListener('submit', prosesCheckout);
 });
