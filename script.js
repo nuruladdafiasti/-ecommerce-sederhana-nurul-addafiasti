@@ -1,11 +1,8 @@
 // =======================================================
-// THE DARK SHOES — LOGIKA KERANJANG, CHECKOUT, KATEGORI, STOK
+// THE DARK SHOES — LOGIKA KERANJANG, CHECKOUT, KATEGORI, STOK, DETAIL
 // =======================================================
 
-// Ambil data keranjang dari localStorage (biar ga hilang kalau refresh)
 let cart = JSON.parse(localStorage.getItem('darkShoesCart')) || [];
-
-// Ambil data stok dari localStorage, kalau belum ada, ambil dari HTML (data-stock)
 let stokBarang = JSON.parse(localStorage.getItem('darkShoesStok')) || {};
 
 function initStok() {
@@ -84,6 +81,41 @@ function initFilterKategori() {
             emptyMsg.style.display = tampil === 0 ? 'block' : 'none';
         });
     });
+}
+
+// =======================================================
+// FITUR MODAL DETAIL PRODUK
+// =======================================================
+function initDetailModal() {
+    document.querySelectorAll('.btn-detail').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const card = btn.closest('.product-card');
+            const addBtn = card.querySelector('.btn-add');
+            const img = card.querySelector('img');
+
+            document.getElementById('detailImg').src = img.src;
+            document.getElementById('detailImg').alt = img.alt;
+            document.getElementById('detailNama').textContent = addBtn.dataset.name;
+            document.getElementById('detailHarga').textContent =
+                'Rp ' + parseInt(addBtn.dataset.price, 10).toLocaleString('id-ID');
+            document.getElementById('detailStok').textContent =
+                card.querySelector('.stock').textContent;
+            document.getElementById('detailDesc').textContent =
+                card.dataset.desc || 'Belum ada deskripsi untuk produk ini.';
+
+            const tombolTambah = document.getElementById('detailAddBtn');
+            tombolTambah.onclick = () => {
+                tambahKeKeranjang(addBtn.dataset.id, addBtn.dataset.name, parseInt(addBtn.dataset.price, 10));
+                closeDetail();
+            };
+
+            document.getElementById('detailOverlay').classList.add('active');
+        });
+    });
+}
+
+function closeDetail() {
+    document.getElementById('detailOverlay').classList.remove('active');
 }
 
 // =======================================================
@@ -189,7 +221,7 @@ function openCheckout() {
 
     summaryEl.innerHTML = cart.map(item =>
         `<p>${item.nama} x${item.qty} — Rp ${(item.harga * item.qty).toLocaleString('id-ID')}</p>`
-    ).join('') + `<p style="margin-top:8px;color:#d4af37;font-weight:600;">Total: Rp ${total.toLocaleString('id-ID')}</p>`;
+    ).join('') + `<p style="margin-top:8px;color:#ffffff;font-weight:600;">Total: Rp ${total.toLocaleString('id-ID')}</p>`;
 
     document.getElementById('checkoutForm').style.display = 'block';
     document.getElementById('checkoutSuccess').style.display = 'none';
@@ -212,7 +244,6 @@ function prosesCheckout(e) {
         return;
     }
 
-    // Kurangi stok sesuai barang yang dibeli
     cart.forEach(item => {
         stokBarang[item.id] = Math.max(0, stokBarang[item.id] - item.qty);
     });
@@ -228,7 +259,6 @@ function prosesCheckout(e) {
     document.getElementById('checkoutForm').style.display = 'none';
     document.getElementById('checkoutSuccess').style.display = 'block';
 
-    // Kosongkan keranjang setelah checkout berhasil
     cart = [];
     simpanCart();
     renderCart();
@@ -242,9 +272,9 @@ document.addEventListener('DOMContentLoaded', () => {
     initStok();
     renderStok();
     initFilterKategori();
+    initDetailModal();
     renderCart();
 
-    // Pasang event listener ke semua tombol "Tambah ke Keranjang"
     document.querySelectorAll('.btn-add').forEach(btn => {
         btn.addEventListener('click', () => {
             const { id, name, price } = btn.dataset;
