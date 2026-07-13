@@ -189,6 +189,21 @@ a { text-decoration: none; color: inherit; }
     gap: 8px;
 }
 
+.size-select {
+    width: 100%;
+    padding: 9px;
+    background: #1f1f1f;
+    border: 1px solid #555;
+    border-radius: 8px;
+    color: #fff;
+    font-family: inherit;
+    cursor: pointer;
+}
+
+.size-select:focus {
+    border-color: #ffffff;
+    outline: none;
+}
 .btn-detail {
     width: 100%;
     padding: 9px;
