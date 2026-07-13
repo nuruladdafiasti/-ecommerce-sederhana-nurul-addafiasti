@@ -181,12 +181,6 @@ function hapusItem(cartId) {
     renderCart();
 }
 
-function hapusItem(id) {
-    cart = cart.filter(i => i.id !== id);
-    simpanCart();
-    renderCart();
-}
-
 function renderCart() {
     const cartItemsEl = document.getElementById('cart-items');
     const totalEl = document.getElementById('total');
@@ -210,13 +204,6 @@ function renderCart() {
             </div>
         `).join('');
     }
-
-    const total = cart.reduce((sum, item) => sum + item.harga * item.qty, 0);
-    const jumlahBarang = cart.reduce((sum, item) => sum + item.qty, 0);
-
-    totalEl.textContent = total.toLocaleString('id-ID');
-    cartCountEl.textContent = jumlahBarang;
-}
 
     const total = cart.reduce((sum, item) => sum + item.harga * item.qty, 0);
     const jumlahBarang = cart.reduce((sum, item) => sum + item.qty, 0);
