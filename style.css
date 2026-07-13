@@ -474,7 +474,7 @@ footer {
     font-size: .85rem;
     color: #cccccc;
     margin-top: 10px;
-    text-align: center;
+    text-align: left;
 }
 
 #formCheckout input,
@@ -486,7 +486,7 @@ footer {
     padding: 10px;
     border-radius: 6px;
     font-family: inherit;
-    text-align: center;
+    text-align: left;
 }
 
 #formCheckout textarea { resize: vertical; min-height: 60px; }
