@@ -725,8 +725,63 @@ footer {
 
 .step-arrow { color: #555; font-size: 1.3rem; padding-top: 12px; }
 
-@media (max-width: 750px) {
-    .success-grid { grid-template-columns: 1fr; }
-    .steps-row { flex-direction: column; }
-    .step-arrow { display: none; }
+/* ===================================================== */
+/* RESPONSIVE — TABLET (≤ 1024px) */
+/* ===================================================== */
+@media (max-width: 1024px) {
+    .container { padding: 50px 5%; }
+
+    .product-grid {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        gap: 18px;
+    }
+}
+
+/* ===================================================== */
+/* RESPONSIVE — TABLET KECIL / HP LANDSCAPE (≤ 768px) */
+/* ===================================================== */
+@media (max-width: 768px) {
+    .navbar {
+        flex-wrap: wrap;
+        padding: 15px 5%;
+        gap: 10px;
+    }
+
+    .nav-links {
+        gap: 15px;
+        font-size: .85rem;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+    }
+
+    .hero { height: 60vh; }
+    .hero-content h1 { font-size: 2rem; }
+    .hero-content p { font-size: .9rem; padding: 0 10px; }
+
+    .section-title { font-size: 1.5rem; }
+
+    .cart-sidebar { width: 320px; }
+
+    .modal-box {
+        width: 380px;
+        padding: 22px;
+    }
+}
+
+@media (max-width: 480px) {
+    .success-page { padding: 30px 4% 60px; }
+    .success-hero h1 { font-size: 1.4rem; }
+    .success-hero p { font-size: .85rem; }
+    .order-number-box { padding: 14px 20px; }
+    .onb-number { font-size: 1.1rem; }
+
+    .success-hero-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+    .success-hero-actions button { width: 100%; }
+
+    .step { min-width: 100%; }
+
+    .produk-item img { width: 45px; height: 45px; }
 }
