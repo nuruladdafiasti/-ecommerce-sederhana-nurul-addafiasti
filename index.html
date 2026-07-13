@@ -506,11 +506,36 @@
             </form>
         </div>
 
-        <div id="checkoutSuccess" style="display:none;">
-            <h2>Pesanan Berhasil! 🎉</h2>
-            <p id="orderSummaryText"></p>
-            <button class="btn-checkout" onclick="closeCheckout()">Tutup</button>
+        <div id="checkoutSuccess" class="success-box" style="display:none;">
+    <div class="success-icon">✓</div>
+    <h2>Pesanan Berhasil!</h2>
+    <p class="success-thanks">Terima kasih, <strong id="successNama"></strong></p>
+
+    <div class="order-details">
+        <div class="order-row">
+            <span>No. Pesanan</span>
+            <span id="orderNomor"></span>
         </div>
+        <div class="order-row">
+            <span>Alamat</span>
+            <span id="orderAlamat"></span>
+        </div>
+        <div class="order-row">
+            <span>Metode Bayar</span>
+            <span id="orderMetode"></span>
+        </div>
+        <div class="order-row">
+            <span>Barang</span>
+            <span id="orderBarang"></span>
+        </div>
+        <div class="order-row order-total">
+            <span>Total Bayar</span>
+            <span id="orderTotal"></span>
+        </div>
+    </div>
+
+    <button class="btn-checkout" onclick="closeCheckout()">Selesai</button>
+</div>
     </div>
 </div>
 
