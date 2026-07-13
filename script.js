@@ -5,7 +5,7 @@
 let cart = JSON.parse(localStorage.getItem('darkShoesCart')) || [];
 let stokBarang = JSON.parse(localStorage.getItem('darkShoesStok')) || {};
 
-const DATA_VERSION = 'v2'; // ganti angka ini (v3, v4, dst) setiap kali kamu ubah stok di HTML
+const DATA_VERSION = 'v3'; // ganti angka ini (v3, v4, dst) setiap kali kamu ubah stok di HTML
 
 function initStok() {
     const versiTersimpan = localStorage.getItem('darkShoesStokVersion');
