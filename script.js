@@ -243,7 +243,6 @@ function closeCheckout() {
 }
 
 function prosesCheckout(e) {
-   function prosesCheckout(e) {
     e.preventDefault();
 
     const nama = document.getElementById('namaPenerima').value.trim();
