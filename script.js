@@ -105,6 +105,9 @@ function initSearch() {
     searchInput.addEventListener('input', () => {
         const keyword = searchInput.value.toLowerCase().trim();
         let tampil = 0;
+        if (keyword.length > 2) {
+    trackEvent('search', 'engagement', keyword);
+}
 
         // Reset filter kategori ke "Semua" saat search aktif
         document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
@@ -195,6 +198,7 @@ function tambahKeKeranjang(id, nama, harga, ukuran, gambar) {
 
     simpanCart();
     renderCart();
+    trackEvent('add_to_cart', 'ecommerce', nama);
     alert(nama + ' (Ukuran ' + ukuran + ') telah ditambahkan ke keranjang!');
 }
 
@@ -310,7 +314,7 @@ function prosesCheckout(e) {
         document.getElementById('alamatPenerima').focus();
         return;
     }
-
+    trackEvent('purchase', 'ecommerce', nomorPesanan);
     // Kurangi stok
     cart.forEach(item => {
         stokBarang[item.id] = Math.max(0, stokBarang[item.id] - item.qty);
