@@ -312,7 +312,7 @@ function prosesCheckout(e) {
         document.getElementById('alamatPenerima').focus();
         return;
     }
-    trackEvent('purchase', 'ecommerce', nomorPesanan);
+  
     // Kurangi stok
     cart.forEach(item => {
         stokBarang[item.id] = Math.max(0, stokBarang[item.id] - item.qty);
