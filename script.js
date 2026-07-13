@@ -5,18 +5,33 @@
 let cart = JSON.parse(localStorage.getItem('darkShoesCart')) || [];
 let stokBarang = JSON.parse(localStorage.getItem('darkShoesStok')) || {};
 
+const DATA_VERSION = 'v2'; // ganti angka ini (v3, v4, dst) setiap kali kamu ubah stok di HTML
+
 function initStok() {
-    document.querySelectorAll('.product-card').forEach(card => {
-        const btn = card.querySelector('.btn-add');
-        const id = btn.dataset.id;
-        if (stokBarang[id] === undefined) {
+    const versiTersimpan = localStorage.getItem('darkShoesStokVersion');
+
+    if (versiTersimpan !== DATA_VERSION) {
+        stokBarang = {};
+        document.querySelectorAll('.product-card').forEach(card => {
+            const btn = card.querySelector('.btn-add');
+            const id = btn.dataset.id;
             const stokEl = card.querySelector('.stock');
             stokBarang[id] = parseInt(stokEl.dataset.stock, 10);
-        }
-    });
+        });
+        localStorage.setItem('darkShoesStokVersion', DATA_VERSION);
+    } else {
+        document.querySelectorAll('.product-card').forEach(card => {
+            const btn = card.querySelector('.btn-add');
+            const id = btn.dataset.id;
+            if (stokBarang[id] === undefined) {
+                const stokEl = card.querySelector('.stock');
+                stokBarang[id] = parseInt(stokEl.dataset.stock, 10);
+            }
+        });
+    }
+
     simpanStok();
 }
-
 function simpanStok() {
     localStorage.setItem('darkShoesStok', JSON.stringify(stokBarang));
 }
@@ -226,12 +241,16 @@ function openCheckout() {
         return;
     }
 
-    const summaryEl = document.getElementById('checkout-summary');
-    const total = cart.reduce((sum, item) => sum + item.harga * item.qty, 0);
+const summaryEl = document.getElementById('checkout-summary');
+const subtotal = cart.reduce((sum, item) => sum + item.harga * item.qty, 0);
+const ongkir = 15000;
+const total = subtotal + ongkir;
 
-    summaryEl.innerHTML = cart.map(item =>
-        `<p>${item.nama} x${item.qty} — Rp ${(item.harga * item.qty).toLocaleString('id-ID')}</p>`
-    ).join('') + `<p style="margin-top:8px;color:#ffffff;font-weight:600;">Total: Rp ${total.toLocaleString('id-ID')}</p>`;
+summaryEl.innerHTML = cart.map(item =>
+    `<p>${item.nama} x${item.qty} — Rp ${(item.harga * item.qty).toLocaleString('id-ID')}</p>`
+).join('') 
++ `<p style="margin-top:8px;">Ongkos Kirim: Rp ${ongkir.toLocaleString('id-ID')}</p>`
++ `<p style="margin-top:4px;color:#ffffff;font-weight:600;">Total: Rp ${total.toLocaleString('id-ID')}</p>`;
 
     document.getElementById('checkoutForm').style.display = 'block';
     document.getElementById('checkoutOverlay').classList.add('active');
