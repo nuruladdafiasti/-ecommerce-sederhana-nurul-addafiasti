@@ -3,228 +3,274 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Dark shoes</title>
+    <title>The Dark Shoes</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
 <header>
     <nav class="navbar">
-
         <div class="logo">THE DARK SHOES</div>
 
         <ul class="nav-links">
             <li><a href="#">Beranda</a></li>
             <li><a href="#produk">Produk</a></li>
-            <li><a href="#">Kategori</a></li>
-
+            <li><a href="#produk">Kategori</a></li>
             <li class="cart-nav" onclick="toggleCart()">
                 🛒 Keranjang
                 (<span id="cart-count">0</span>)
             </li>
-
         </ul>
-
     </nav>
 </header>
 
-    <main>
-        <section class="hero">
-            <div class="hero-content">
-                <h1>WELCOME TO THE DARK SHOES</h1>
-                <p>Koleksi Sepatu yang ga cuma nyaman, tapi juga bikin kamu makin keren.</p>
-                <a href="#produk" class="btn-hero">Jelajahi Sekarang</a>
-            </div>
-        </section>
-
-        <section id="produk" class="container">
-            <h2 class="section-title">Produk Unggulan</h2>
-            <div class="product-grid">
-                
-                 
-                <article class="product-card">
-                    <img src="flat1.jpeg" alt="flat shoes 1">
-                    <h3>flat shoes 1</h3>
-                    <p class="price">Rp 299.999</p>
-                    <button class="btn-add" onclick="tambahKeKeranjang('flat shoes 1')">Tambah ke Keranjang</button>
-                </article>
-
-                <article class="product-card">
-                    <img src="flat2.jpeg" alt="flat shoes 2">
-                    <h3>flat shoes 2</h3>
-                    <p class="price">Rp 399.999</p>
-                    <button class="btn-add" onclick="tambahKeKeranjang('flat shoes 2')">Tambah ke Keranjang</button>
-                </article>
-
-                <article class="product-card">
-                    <img src="flat3.jpeg" alt="flat shoes 3">
-                    <h3>flat shoes 3</h3>
-                    <p class="price">Rp 299.999</p>
-                    <button class="btn-add" onclick="tambahKeKeranjang('flat shoes 3')">Tambah ke Keranjang</button>
-                </article>
-
-                <article class="product-card">
-                    <img src="flat4.jpeg" alt="flat shoes 4">
-                    <h3>flat shoes 4</h3>
-                    <p class="price">Rp 399.999</p>
-                    <button class="btn-add" onclick="tambahKeKeranjang('flat shoes 4')">Tambah ke Keranjang</button>
-                </article>
-
-                 <article class="product-card">
-                    <img src="heelsr1.jpeg" alt="heels shoes 1">
-                    <h3>heels shoes 1</h3>
-                    <p class="price">Rp 399.999</p>
-                    <button class="btn-add" onclick="tambahKeKeranjang('heels shoes 1')">Tambah ke Keranjang</button>
-                </article>
-
-                 <article class="product-card">
-                    <img src="heelsr2.jpeg" alt="heels shoes 2">
-                    <h3>heels shoes 2</h3>
-                    <p class="price">Rp 499.999</p>
-                    <button class="btn-add" onclick="tambahKeKeranjang('heels shoes 2')">Tambah ke Keranjang</button>
-                </article>
-
-   <article class="product-card">
-                    <img src="heelsr3.jpeg" alt="heels shoes 3">
-                    <h3>heels shoes 3</h3>
-                    <p class="price">Rp 399.999</p>
-                    <button class="btn-add" onclick="tambahKeKeranjang('heels shoes 3')">Tambah ke Keranjang</button>
-                </article>
-
-                <article class="product-card">
-                    <img src="heelsr4.jpeg" alt="heels shoes 4">
-                    <h3>Shoes heels shoes 4</h3>
-                    <p class="price">Rp 499.999</p>
-                    <button class="btn-add" onclick="tambahKeKeranjang('heels shoes 4')">Tambah ke Keranjang</button>
-                </article>
-
-                
-                <article class="product-card">
-                    <img src="sn1.jpeg" alt="sneakers shoes 1">
-                    <h3>sneakers shoes 1</h3>
-                    <p class="price">Rp 499.999</p>
-                    <button class="btn-add" onclick="tambahKeKeranjang('sneakers shoes 1')">Tambah ke Keranjang</button>
-                 </article>
-
-                 <article class="product-card">
-                    <img src="sn2.jpeg" alt="sneakers shoes 2">
-                    <h3>sneakers shoes 2</h3>
-                    <p class="price">Rp 599.999</p>
-                    <button class="btn-add" onclick="tambahKeKeranjang('sneakers shoes 2')">Tambah ke Keranjang</button>
-                </article>
-
-                <article class="product-card">
-                    <img src="sn3.jpeg" alt="sneakers shoes 3">
-                    <h3>sneakers shoes 3</h3>
-                    <p class="price">Rp 499.999</p>
-                    <button class="btn-add" onclick="tambahKeKeranjang('sneakers shoes 3')">Tambah ke Keranjang</button>
-                </article>
-
-                <article class="product-card">
-                    <img src="sn4.jpeg" alt="sneakers shoes 4">
-                    <h3>sneakers shoes 4</h3>
-                    <p class="price">Rp 599.999</p>
-                    <button class="btn-add" onclick="tambahKeKeranjang('sneakers shoes 4')">Tambah ke Keranjang</button>
-                </article>
-
-                <article class="product-card">
-                    <img src="run1.jpeg" alt="running shoes 1">
-                    <h3>running shoes 1</h3>
-                    <p class="price">Rp 699.999</p>
-                    <button class="btn-add" onclick="tambahKeKeranjang('running shoes 1')">Tambah ke Keranjang</button>
-                </article>
-
-                <article class="product-card">
-                    <img src="run2.jpeg" alt="running shoes 2">
-                    <h3>running shoes 2</h3>
-                    <p class="price">Rp 599.999</p>
-                    <button class="btn-add" onclick="tambahKeKeranjang('running shoes 2')">Tambah ke Keranjang</button>
-                </article>
-
-                <article class="product-card">
-                    <img src="run3.jpeg" alt="running shoes 3">
-                    <h3>running shoes 3</h3>
-                    <p class="price">Rp 699.999</p>
-                    <button class="btn-add" onclick="tambahKeKeranjang('running shoes 3')">Tambah ke Keranjang</button>
-                </article>
-
-                <article class="product-card">
-                    <img src="run4.jpeg" alt="running shoes 4">
-                    <h3>running shoes 4</h3>
-                    <p class="price">Rp 599.999</p>
-                    <button class="btn-add" onclick="tambahKeKeranjang('running shoes 4')">Tambah ke Keranjang</button>
-                </article>
-
-                <article class="product-card">
-                    <img src="bt1.jpeg" alt="boots shoes 1">
-                    <h3>boots shoes 1</h3>
-                    <p class="price">Rp 699.999</p>
-                    <button class="btn-add" onclick="tambahKeKeranjang('boots shoes 1')">Tambah ke Keranjang</button>
-                </article>
-
-                <article class="product-card">
-                    <img src="bt2.jpeg" alt="boots shoes 2">
-                    <h3>boots shoes 2</h3>
-                    <p class="price">Rp 799.999</p>
-                    <button class="btn-add" onclick="tambahKeKeranjang('boots shoes 2')">Tambah ke Keranjang</button>
-                </article>
-
-                <article class="product-card">
-                    <img src="bt3.jpeg" alt="boots shoes 3">
-                    <h3>boots shoes 3</h3>
-                    <p class="price">Rp 699.999</p>
-                    <button class="btn-add" onclick="tambahKeKeranjang('boots shoes 3')">Tambah ke Keranjang</button>
-                </article>
-
-                <article class="product-card">
-                    <img src="bt4.jpeg" alt="boots shoes 4">
-                    <h3>boots shoes 4</h3>
-                    <p class="price">Rp 799.999</p>
-                    <button class="btn-add" onclick="tambahKeKeranjang('boots shoes 4')">Tambah ke Keranjang</button>
-                </article>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="footer-info">
-            <p>Kontak: nuruladdafiasti@gmail.com | +62 896 5263 8714</p>
-            <p>&copy; 2026 the Docmart | Nurul - Administrasi Bisnis 3</p>
+<main>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>WELCOME TO THE DARK SHOES</h1>
+            <p>Koleksi Sepatu yang ga cuma nyaman, tapi juga bikin kamu makin keren.</p>
+            <a href="#produk" class="btn-hero">Jelajahi Sekarang</a>
         </div>
-    </footer>
+    </section>
 
-    <script>
-        let jumlahBarang = 0;
+    <section id="produk" class="container">
+        <h2 class="section-title">Produk Unggulan</h2>
 
-        function tambahKeKeranjang(namaProduk) {
-            jumlahBarang++;
-            document.getElementById('cart-count').innerText = jumlahBarang;
-            alert(namaProduk + " telah ditambahkan ke keranjang!");
-        }
+        <!-- FILTER KATEGORI -->
+        <div class="category-filter" id="categoryFilter">
+            <button class="cat-btn active" data-category="semua">Semua</button>
+            <button class="cat-btn" data-category="flat">Flat Shoes</button>
+            <button class="cat-btn" data-category="heels">Heels</button>
+            <button class="cat-btn" data-category="sneakers">Sneakers</button>
+            <button class="cat-btn" data-category="running">Running</button>
+            <button class="cat-btn" data-category="boots">Boots</button>
+        </div>
 
-        function checkoutAlert() {
-            if(jumlahBarang > 0) {
-                alert("Anda memiliki " + jumlahBarang + " produk. Lanjut ke proses Checkout?");
-            } else {
-                alert("Keranjang Anda masih kosong!");
-            }
-        }
-    </script>
+        <div class="product-grid" id="productGrid">
+
+            <article class="product-card" data-category="flat">
+                <img src="flat1.jpeg" alt="flat shoes 1">
+                <h3>Flat Shoes 1</h3>
+                <p class="price">Rp 299.999</p>
+                <p class="stock" data-stock="8">Stok: 8</p>
+                <button class="btn-add" data-id="flat1" data-name="Flat Shoes 1" data-price="299999">Tambah ke Keranjang</button>
+            </article>
+
+            <article class="product-card" data-category="flat">
+                <img src="flat2.jpeg" alt="flat shoes 2">
+                <h3>Flat Shoes 2</h3>
+                <p class="price">Rp 399.999</p>
+                <p class="stock" data-stock="5">Stok: 5</p>
+                <button class="btn-add" data-id="flat2" data-name="Flat Shoes 2" data-price="399999">Tambah ke Keranjang</button>
+            </article>
+
+            <article class="product-card" data-category="flat">
+                <img src="flat3.jpeg" alt="flat shoes 3">
+                <h3>Flat Shoes 3</h3>
+                <p class="price">Rp 299.999</p>
+                <p class="stock" data-stock="0">Stok: 0</p>
+                <button class="btn-add" data-id="flat3" data-name="Flat Shoes 3" data-price="299999">Tambah ke Keranjang</button>
+            </article>
+
+            <article class="product-card" data-category="flat">
+                <img src="flat4.jpeg" alt="flat shoes 4">
+                <h3>Flat Shoes 4</h3>
+                <p class="price">Rp 399.999</p>
+                <p class="stock" data-stock="12">Stok: 12</p>
+                <button class="btn-add" data-id="flat4" data-name="Flat Shoes 4" data-price="399999">Tambah ke Keranjang</button>
+            </article>
+
+            <article class="product-card" data-category="heels">
+                <img src="heelsr1.jpeg" alt="heels shoes 1">
+                <h3>Heels Shoes 1</h3>
+                <p class="price">Rp 399.999</p>
+                <p class="stock" data-stock="6">Stok: 6</p>
+                <button class="btn-add" data-id="heels1" data-name="Heels Shoes 1" data-price="399999">Tambah ke Keranjang</button>
+            </article>
+
+            <article class="product-card" data-category="heels">
+                <img src="heelsr2.jpeg" alt="heels shoes 2">
+                <h3>Heels Shoes 2</h3>
+                <p class="price">Rp 499.999</p>
+                <p class="stock" data-stock="3">Stok: 3</p>
+                <button class="btn-add" data-id="heels2" data-name="Heels Shoes 2" data-price="499999">Tambah ke Keranjang</button>
+            </article>
+
+            <article class="product-card" data-category="heels">
+                <img src="heelsr3.jpeg" alt="heels shoes 3">
+                <h3>Heels Shoes 3</h3>
+                <p class="price">Rp 399.999</p>
+                <p class="stock" data-stock="9">Stok: 9</p>
+                <button class="btn-add" data-id="heels3" data-name="Heels Shoes 3" data-price="399999">Tambah ke Keranjang</button>
+            </article>
+
+            <article class="product-card" data-category="heels">
+                <img src="heelsr4.jpeg" alt="heels shoes 4">
+                <h3>Heels Shoes 4</h3>
+                <p class="price">Rp 499.999</p>
+                <p class="stock" data-stock="4">Stok: 4</p>
+                <button class="btn-add" data-id="heels4" data-name="Heels Shoes 4" data-price="499999">Tambah ke Keranjang</button>
+            </article>
+
+            <article class="product-card" data-category="sneakers">
+                <img src="sn1.jpeg" alt="sneakers shoes 1">
+                <h3>Sneakers Shoes 1</h3>
+                <p class="price">Rp 499.999</p>
+                <p class="stock" data-stock="10">Stok: 10</p>
+                <button class="btn-add" data-id="sn1" data-name="Sneakers Shoes 1" data-price="499999">Tambah ke Keranjang</button>
+            </article>
+
+            <article class="product-card" data-category="sneakers">
+                <img src="sn2.jpeg" alt="sneakers shoes 2">
+                <h3>Sneakers Shoes 2</h3>
+                <p class="price">Rp 599.999</p>
+                <p class="stock" data-stock="7">Stok: 7</p>
+                <button class="btn-add" data-id="sn2" data-name="Sneakers Shoes 2" data-price="599999">Tambah ke Keranjang</button>
+            </article>
+
+            <article class="product-card" data-category="sneakers">
+                <img src="sn3.jpeg" alt="sneakers shoes 3">
+                <h3>Sneakers Shoes 3</h3>
+                <p class="price">Rp 499.999</p>
+                <p class="stock" data-stock="0">Stok: 0</p>
+                <button class="btn-add" data-id="sn3" data-name="Sneakers Shoes 3" data-price="499999">Tambah ke Keranjang</button>
+            </article>
+
+            <article class="product-card" data-category="sneakers">
+                <img src="sn4.jpeg" alt="sneakers shoes 4">
+                <h3>Sneakers Shoes 4</h3>
+                <p class="price">Rp 599.999</p>
+                <p class="stock" data-stock="6">Stok: 6</p>
+                <button class="btn-add" data-id="sn4" data-name="Sneakers Shoes 4" data-price="599999">Tambah ke Keranjang</button>
+            </article>
+
+            <article class="product-card" data-category="running">
+                <img src="run1.jpeg" alt="running shoes 1">
+                <h3>Running Shoes 1</h3>
+                <p class="price">Rp 699.999</p>
+                <p class="stock" data-stock="5">Stok: 5</p>
+                <button class="btn-add" data-id="run1" data-name="Running Shoes 1" data-price="699999">Tambah ke Keranjang</button>
+            </article>
+
+            <article class="product-card" data-category="running">
+                <img src="run2.jpeg" alt="running shoes 2">
+                <h3>Running Shoes 2</h3>
+                <p class="price">Rp 599.999</p>
+                <p class="stock" data-stock="8">Stok: 8</p>
+                <button class="btn-add" data-id="run2" data-name="Running Shoes 2" data-price="599999">Tambah ke Keranjang</button>
+            </article>
+
+            <article class="product-card" data-category="running">
+                <img src="run3.jpeg" alt="running shoes 3">
+                <h3>Running Shoes 3</h3>
+                <p class="price">Rp 699.999</p>
+                <p class="stock" data-stock="2">Stok: 2</p>
+                <button class="btn-add" data-id="run3" data-name="Running Shoes 3" data-price="699999">Tambah ke Keranjang</button>
+            </article>
+
+            <article class="product-card" data-category="running">
+                <img src="run4.jpeg" alt="running shoes 4">
+                <h3>Running Shoes 4</h3>
+                <p class="price">Rp 599.999</p>
+                <p class="stock" data-stock="11">Stok: 11</p>
+                <button class="btn-add" data-id="run4" data-name="Running Shoes 4" data-price="599999">Tambah ke Keranjang</button>
+            </article>
+
+            <article class="product-card" data-category="boots">
+                <img src="bt1.jpeg" alt="boots shoes 1">
+                <h3>Boots Shoes 1</h3>
+                <p class="price">Rp 699.999</p>
+                <p class="stock" data-stock="4">Stok: 4</p>
+                <button class="btn-add" data-id="bt1" data-name="Boots Shoes 1" data-price="699999">Tambah ke Keranjang</button>
+            </article>
+
+            <article class="product-card" data-category="boots">
+                <img src="bt2.jpeg" alt="boots shoes 2">
+                <h3>Boots Shoes 2</h3>
+                <p class="price">Rp 799.999</p>
+                <p class="stock" data-stock="3">Stok: 3</p>
+                <button class="btn-add" data-id="bt2" data-name="Boots Shoes 2" data-price="799999">Tambah ke Keranjang</button>
+            </article>
+
+            <article class="product-card" data-category="boots">
+                <img src="bt3.jpeg" alt="boots shoes 3">
+                <h3>Boots Shoes 3</h3>
+                <p class="price">Rp 699.999</p>
+                <p class="stock" data-stock="0">Stok: 0</p>
+                <button class="btn-add" data-id="bt3" data-name="Boots Shoes 3" data-price="699999">Tambah ke Keranjang</button>
+            </article>
+
+            <article class="product-card" data-category="boots">
+                <img src="bt4.jpeg" alt="boots shoes 4">
+                <h3>Boots Shoes 4</h3>
+                <p class="price">Rp 799.999</p>
+                <p class="stock" data-stock="7">Stok: 7</p>
+                <button class="btn-add" data-id="bt4" data-name="Boots Shoes 4" data-price="799999">Tambah ke Keranjang</button>
+            </article>
+
+        </div>
+
+        <p class="empty-category-msg" id="emptyMsg" style="display:none;">Belum ada produk di kategori ini.</p>
+    </section>
+</main>
+
+<footer>
+    <div class="footer-info">
+        <p>Kontak: nuruladdafiasti@gmail.com | +62 896 5263 8714</p>
+        <p>&copy; 2026 the Docmart | Nurul - Administrasi Bisnis 3</p>
+    </div>
+</footer>
+
+<!-- SIDEBAR KERANJANG -->
+<div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
 <div class="cart-sidebar" id="cartSidebar">
+    <div class="cart-header">
+        <h2>Keranjang Belanja</h2>
+        <button class="close-cart" onclick="toggleCart()">&times;</button>
+    </div>
 
-<h2>Keranjang Belanja</h2>
+    <div id="cart-items"></div>
 
-<div id="cart-items"></div>
+    <div class="cart-footer">
+        <h3>Total: Rp <span id="total">0</span></h3>
+        <button class="btn-checkout" onclick="openCheckout()">Checkout</button>
+    </div>
+</div>
 
-<h3>Total : Rp <span id="total">0</span></h3>
+<!-- MODAL CHECKOUT -->
+<div class="modal-overlay" id="checkoutOverlay">
+    <div class="modal-box">
+        <button class="close-modal" onclick="closeCheckout()">&times;</button>
 
-<button
-class="btn-add"
-onclick="addToCart('flat shoes 1',299999)">
-Tambah ke Keranjang
-</button>
+        <div id="checkoutForm">
+            <h2>Checkout</h2>
+            <div id="checkout-summary"></div>
 
+            <form id="formCheckout">
+                <label>Nama Penerima</label>
+                <input type="text" id="namaPenerima" required placeholder="Nama lengkap">
+
+                <label>Alamat Pengiriman</label>
+                <textarea id="alamatPenerima" required placeholder="Alamat lengkap"></textarea>
+
+                <label>Metode Pembayaran</label>
+                <select id="metodePembayaran">
+                    <option value="Transfer Bank">Transfer Bank</option>
+                    <option value="COD">COD (Bayar di Tempat)</option>
+                    <option value="E-Wallet">E-Wallet</option>
+                </select>
+
+                <button type="submit" class="btn-checkout">Buat Pesanan</button>
+            </form>
+        </div>
+
+        <div id="checkoutSuccess" style="display:none;">
+            <h2>Pesanan Berhasil! 🎉</h2>
+            <p id="orderSummaryText"></p>
+            <button class="btn-checkout" onclick="closeCheckout()">Tutup</button>
+        </div>
+    </div>
 </div>
 
 <script src="script.js"></script>
