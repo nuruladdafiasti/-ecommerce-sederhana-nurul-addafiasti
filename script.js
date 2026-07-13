@@ -198,7 +198,7 @@ function tambahKeKeranjang(id, nama, harga, ukuran, gambar) {
 
     simpanCart();
     renderCart();
-    trackEvent('add_to_cart', 'ecommerce', nama);
+   
     alert(nama + ' (Ukuran ' + ukuran + ') telah ditambahkan ke keranjang!');
 }
 
@@ -342,7 +342,7 @@ function prosesCheckout(e) {
     // Isi header sukses
     document.getElementById('spNomor').textContent = nomorPesanan;
     document.getElementById('spTanggal').textContent = tanggalTampil;
-
+    trackEvent('purchase', 'ecommerce', nomorPesanan);
     // Isi daftar produk
     const produkListEl = document.getElementById('spProdukList');
     produkListEl.innerHTML = cart.map(item => `
