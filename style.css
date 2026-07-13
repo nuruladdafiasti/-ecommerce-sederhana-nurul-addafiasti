@@ -783,8 +783,20 @@ footer {
     .nav-links {
         width: 100%;
         justify-content: space-between;
-        gap: 10px;
-        font-size: .8rem;
+        align-items: center;
+        gap: 8px;
+        font-size: .75rem;
+        flex-wrap: nowrap;
+    }
+
+    .nav-links li a {
+        white-space: nowrap;
+    }
+
+    .cart-nav {
+        padding: 6px 12px;
+        font-size: .75rem;
+        white-space: nowrap;
     }
 
     .hero { height: 55vh; }
