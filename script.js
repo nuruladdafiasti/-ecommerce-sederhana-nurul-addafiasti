@@ -249,11 +249,17 @@ function prosesCheckout(e) {
     const alamat = document.getElementById('alamatPenerima').value.trim();
     const metode = document.getElementById('metodePembayaran').value;
 
-    if (!nama || !alamat) {
-        alert('Mohon lengkapi nama dan alamat pengiriman.');
+    if (!nama) {
+        alert('Mohon isi nama penerima terlebih dahulu.');
+        document.getElementById('namaPenerima').focus();
         return;
     }
 
+    if (!alamat) {
+        alert('Mohon isi alamat pengiriman terlebih dahulu.');
+        document.getElementById('alamatPenerima').focus();
+        return;
+    }
     cart.forEach(item => {
         stokBarang[item.id] = Math.max(0, stokBarang[item.id] - item.qty);
     });
