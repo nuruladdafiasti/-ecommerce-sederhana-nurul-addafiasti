@@ -669,7 +669,7 @@ footer {
 }
 
 .produk-item-info { flex: 1; }
-.produk-item-info h5 { color: #ffffff; font-size: .85rem; margin-bottom: 3px; }
+.produk-item-info h5 { color: #ffffff; font-size: .85rem; margin-bottom: 3px; overflow-wrap: break-word; }
 .produk-item-info span { color: #999; font-size: .75rem; }
 
 .produk-item-harga {
@@ -821,6 +821,8 @@ footer {
         padding: 18px;
     }
 
+    .detail-img { height: 160px; }
+    
     .close-cart, .close-modal {
         padding: 8px;
         font-size: 1.8rem;
