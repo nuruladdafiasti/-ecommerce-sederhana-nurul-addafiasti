@@ -97,7 +97,34 @@ function initFilterKategori() {
         });
     });
 }
+function initSearch() {
+    const searchInput = document.getElementById('searchInput');
+    const semuaProduk = document.querySelectorAll('.product-card');
+    const emptyMsg = document.getElementById('emptyMsg');
 
+    searchInput.addEventListener('input', () => {
+        const keyword = searchInput.value.toLowerCase().trim();
+        let tampil = 0;
+
+        // Reset filter kategori ke "Semua" saat search aktif
+        document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+        document.querySelector('.cat-btn[data-category="semua"]').classList.add('active');
+
+        semuaProduk.forEach(card => {
+            const nama = card.querySelector('h3').textContent.toLowerCase();
+            const harga = card.querySelector('.price').textContent.toLowerCase();
+
+            if (nama.includes(keyword) || harga.includes(keyword)) {
+                card.style.display = '';
+                tampil++;
+            } else {
+                card.style.display = 'none';
+            }
+        });
+
+        emptyMsg.style.display = tampil === 0 ? 'block' : 'none';
+    });
+}
 // =======================================================
 // FITUR MODAL DETAIL PRODUK
 // =======================================================
@@ -364,6 +391,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initStok();
     renderStok();
     initFilterKategori();
+    initSearch(); 
     initDetailModal();
     renderCart();
 
