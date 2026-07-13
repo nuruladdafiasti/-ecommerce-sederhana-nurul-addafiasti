@@ -488,7 +488,7 @@
             <h2>Checkout</h2>
             <div id="checkout-summary"></div>
 
-            <form id="formCheckout"novalidate>
+            <form id="formCheckout" novalidate>
                 <label>Nama Penerima</label>
                 <input type="text" id="namaPenerima" required placeholder="Nama lengkap">
 
@@ -515,12 +515,102 @@
 
 <!-- HALAMAN SUKSES CHECKOUT -->
 <div class="success-page" id="successPage">
-  ...
-</div>
+  <div class="success-page-inner">
 
-<script src="script.js"></script>
-</body>
-</html>
+    <div class="success-hero">
+        <div class="success-icon-big">✓</div>
+        <h1>Terima kasih!</h1>
+        <p>Pesanan kamu telah berhasil kami terima.<br>Kami akan segera memproses pesananmu.</p>
+
+        <div class="order-number-box">
+            <span class="onb-label">Nomor Pesanan</span>
+            <span class="onb-number" id="spNomor"></span>
+            <span class="onb-date" id="spTanggal"></span>
+        </div>
+
+        <div class="success-hero-actions">
+            <button class="btn-dark" onclick="scrollToDetail()">Lihat Detail Pesanan</button>
+            <button class="btn-outline" onclick="closeSuccessPage()">Lanjut Belanja</button>
+        </div>
+    </div>
+
+    <div class="success-grid" id="successDetailSection">
+        <div class="detail-pesanan-box">
+            <h3>Detail Pesanan</h3>
+
+            <div class="info-row">
+                <span>Status Pesanan</span>
+                <span class="badge-green">Pesanan Diterima</span>
+            </div>
+
+            <h4 class="produk-title">Produk yang Dipesan</h4>
+            <div id="spProdukList"></div>
+
+            <div class="info-block">
+                <h4>Informasi Pengiriman</h4>
+                <div class="info-row"><span>Nama Penerima</span><span id="spNama"></span></div>
+                <div class="info-row"><span>No. Telepon</span><span id="spTelepon"></span></div>
+                <div class="info-row"><span>Alamat</span><span id="spAlamat"></span></div>
+                <div class="info-row"><span>Metode Pengiriman</span><span>Reguler (2-3 Hari)</span></div>
+            </div>
+
+            <div class="info-block">
+                <div class="info-row"><span>Metode Pembayaran</span><span id="spMetode"></span></div>
+                <div class="info-row">
+                    <span>Status Pembayaran</span>
+                    <span class="badge-green">Pembayaran Berhasil</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="ringkasan-col">
+            <div class="ringkasan-box">
+                <h3>Ringkasan Pembayaran</h3>
+                <div class="info-row"><span id="spJumlahLabel">Subtotal</span><span id="spSubtotal"></span></div>
+                <div class="info-row"><span>Ongkos Kirim</span><span id="spOngkir"></span></div>
+                <div class="info-row total-row"><span>Total Pembayaran</span><span id="spTotal"></span></div>
+            </div>
+
+            <div class="bantuan-box">
+                <h4>Butuh Bantuan?</h4>
+                <p>Jika ada pertanyaan terkait pesananmu, silakan hubungi kami.</p>
+                <button class="btn-outline" onclick="alert('Hubungi kami di nuruladdafiasti@gmail.com atau +62 896 5263 8714')">Hubungi Customer Service</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="langkah-box">
+        <h3>Langkah Selanjutnya</h3>
+        <div class="steps-row">
+            <div class="step active">
+                <div class="step-icon">📋</div>
+                <p class="step-title">1. Pesanan Diterima</p>
+                <p class="step-desc">Pesanan kamu telah kami terima dan sedang diproses.</p>
+            </div>
+            <div class="step-arrow">›</div>
+            <div class="step">
+                <div class="step-icon">📦</div>
+                <p class="step-title">2. Dikemas</p>
+                <p class="step-desc">Produk akan kami kemas dengan aman.</p>
+            </div>
+            <div class="step-arrow">›</div>
+            <div class="step">
+                <div class="step-icon">🚚</div>
+                <p class="step-title">3. Dikirim</p>
+                <p class="step-desc">Pesanan dalam perjalanan menuju alamat tujuan.</p>
+            </div>
+            <div class="step-arrow">›</div>
+            <div class="step">
+                <div class="step-icon">✅</div>
+                <p class="step-title">4. Selesai</p>
+                <p class="step-desc">Pesanan diterima. Terima kasih!</p>
+            </div>
+        </div>
+    </div>
+
+  </div>
+</div>
+    
 <script src="script.js"></script>
 </body>
 </html>
