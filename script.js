@@ -102,10 +102,13 @@ function initSearch() {
     const semuaProduk = document.querySelectorAll('.product-card');
     const emptyMsg = document.getElementById('emptyMsg');
 
-    searchInput.addEventListener('input', () => {
+ searchInput.addEventListener('input', () => {
         const keyword = searchInput.value.toLowerCase().trim();
         let tampil = 0;
-    
+
+        if (keyword.length > 2) {
+            trackEvent('search', 'engagement', keyword);
+        }
 
         // Reset filter kategori ke "Semua" saat search aktif
         document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
@@ -194,9 +197,9 @@ function tambahKeKeranjang(id, nama, harga, ukuran, gambar) {
         cart.push({ cartId, id, nama, harga, ukuran, gambar, qty: 1 });
     }
 
-    simpanCart();
+   simpanCart();
     renderCart();
-   
+    trackEvent('add_to_cart', 'ecommerce', nama);
     alert(nama + ' (Ukuran ' + ukuran + ') telah ditambahkan ke keranjang!');
 }
 
