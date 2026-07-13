@@ -234,7 +234,6 @@ function openCheckout() {
     ).join('') + `<p style="margin-top:8px;color:#ffffff;font-weight:600;">Total: Rp ${total.toLocaleString('id-ID')}</p>`;
 
     document.getElementById('checkoutForm').style.display = 'block';
-    document.getElementById('checkoutSuccess').style.display = 'none';
     document.getElementById('checkoutOverlay').classList.add('active');
 }
 
