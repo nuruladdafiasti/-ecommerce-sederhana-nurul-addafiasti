@@ -107,7 +107,7 @@ function initDetailModal() {
            const tombolTambah = document.getElementById('detailAddBtn');
 tombolTambah.onclick = () => {
     const ukuran = document.getElementById('detailSizeSelect').value;
-    tambahKeKeranjang(addBtn.dataset.id, addBtn.dataset.name, parseInt(addBtn.dataset.price, 10), ukuran);
+     tambahKeKeranjang(addBtn.dataset.id, addBtn.dataset.name, parseInt(addBtn.dataset.price, 10), ukuran, img.src);
     if (ukuran) {
         document.getElementById('detailSizeSelect').value = '';
         closeDetail();
@@ -125,7 +125,7 @@ function closeDetail() {
 // =======================================================
 // FITUR KERANJANG
 // =======================================================
-function tambahKeKeranjang(id, nama, harga, ukuran) {
+function tambahKeKeranjang(id, nama, harga, ukuran, gambar) {
     if (!ukuran) {
         alert('Mohon pilih ukuran terlebih dahulu untuk ' + nama + '!');
         return;
@@ -148,7 +148,7 @@ function tambahKeKeranjang(id, nama, harga, ukuran) {
     if (itemAda) {
         itemAda.qty++;
     } else {
-        cart.push({ cartId, id, nama, harga, ukuran, qty: 1 });
+        cart.push({ cartId, id, nama, harga, ukuran, gambar, qty: 1 });
     }
 
     simpanCart();
@@ -243,9 +243,11 @@ function closeCheckout() {
 }
 
 function prosesCheckout(e) {
+   function prosesCheckout(e) {
     e.preventDefault();
 
     const nama = document.getElementById('namaPenerima').value.trim();
+    const telepon = document.getElementById('teleponPenerima').value.trim();
     const alamat = document.getElementById('alamatPenerima').value.trim();
     const metode = document.getElementById('metodePembayaran').value;
 
@@ -254,36 +256,88 @@ function prosesCheckout(e) {
         document.getElementById('namaPenerima').focus();
         return;
     }
-
+    if (!telepon) {
+        alert('Mohon isi nomor telepon terlebih dahulu.');
+        document.getElementById('teleponPenerima').focus();
+        return;
+    }
     if (!alamat) {
         alert('Mohon isi alamat pengiriman terlebih dahulu.');
         document.getElementById('alamatPenerima').focus();
         return;
     }
+
+    // Kurangi stok
     cart.forEach(item => {
         stokBarang[item.id] = Math.max(0, stokBarang[item.id] - item.qty);
     });
     simpanStok();
     renderStok();
 
-    const total = cart.reduce((sum, item) => sum + item.harga * item.qty, 0);
-    const daftarBarang = cart.map(item => `${item.nama} x${item.qty}`).join(', ');
-    const nomorPesanan = 'DS-' + Math.floor(100000 + Math.random() * 900000);
+    // Hitung total
+    const subtotal = cart.reduce((sum, item) => sum + item.harga * item.qty, 0);
+    const jumlahItem = cart.reduce((sum, item) => sum + item.qty, 0);
+    const ongkir = 15000;
+    const total = subtotal + ongkir;
 
-    document.getElementById('successNama').textContent = nama;
-    document.getElementById('orderNomor').textContent = nomorPesanan;
-    document.getElementById('orderAlamat').textContent = alamat;
-    document.getElementById('orderMetode').textContent = metode;
-    document.getElementById('orderBarang').textContent = daftarBarang;
-    document.getElementById('orderTotal').textContent = 'Rp ' + total.toLocaleString('id-ID');
+    // Nomor pesanan otomatis
+    const now = new Date();
+    const tanggalKode = now.getFullYear().toString() +
+        String(now.getMonth() + 1).padStart(2, '0') +
+        String(now.getDate()).padStart(2, '0');
+    const nomorPesanan = '#TD' + tanggalKode + '-' + String(Math.floor(Math.random() * 900) + 100);
 
-    document.getElementById('checkoutForm').style.display = 'none';
-    document.getElementById('checkoutSuccess').style.display = 'block';
+    const tanggalTampil = now.toLocaleDateString('id-ID', {
+        day: 'numeric', month: 'long', year: 'numeric'
+    }) + ', ' + now.toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' }) + ' WIB';
 
+    // Isi header sukses
+    document.getElementById('spNomor').textContent = nomorPesanan;
+    document.getElementById('spTanggal').textContent = tanggalTampil;
+
+    // Isi daftar produk
+    const produkListEl = document.getElementById('spProdukList');
+    produkListEl.innerHTML = cart.map(item => `
+        <div class="produk-item">
+            <img src="${item.gambar || ''}" alt="${item.nama}">
+            <div class="produk-item-info">
+                <h5>${item.nama}</h5>
+                <span>Ukuran: ${item.ukuran} &nbsp;•&nbsp; x${item.qty}</span>
+            </div>
+            <div class="produk-item-harga">Rp ${(item.harga * item.qty).toLocaleString('id-ID')}</div>
+        </div>
+    `).join('');
+
+    // Isi info pengiriman & pembayaran
+    document.getElementById('spNama').textContent = nama;
+    document.getElementById('spTelepon').textContent = telepon;
+    document.getElementById('spAlamat').textContent = alamat;
+    document.getElementById('spMetode').textContent = metode;
+
+    // Isi ringkasan pembayaran
+    document.getElementById('spJumlahLabel').textContent = `Subtotal (${jumlahItem} Produk)`;
+    document.getElementById('spSubtotal').textContent = 'Rp ' + subtotal.toLocaleString('id-ID');
+    document.getElementById('spOngkir').textContent = 'Rp ' + ongkir.toLocaleString('id-ID');
+    document.getElementById('spTotal').textContent = 'Rp ' + total.toLocaleString('id-ID');
+
+    // Tutup modal checkout, buka halaman sukses
+    document.getElementById('checkoutOverlay').classList.remove('active');
+    document.getElementById('successPage').classList.add('active');
+    window.scrollTo(0, 0);
+
+    // Reset keranjang
     cart = [];
     simpanCart();
     renderCart();
     document.getElementById('formCheckout').reset();
+}
+
+function closeSuccessPage() {
+    document.getElementById('successPage').classList.remove('active');
+}
+
+function scrollToDetail() {
+    document.getElementById('successDetailSection').scrollIntoView({ behavior: 'smooth' });
 }
 
 // =======================================================
@@ -296,13 +350,15 @@ document.addEventListener('DOMContentLoaded', () => {
     initDetailModal();
     renderCart();
 
-    document.querySelectorAll('.btn-add').forEach(btn => {
+   document.querySelectorAll('.btn-add').forEach(btn => {
     btn.addEventListener('click', () => {
         const { id, name, price } = btn.dataset;
-        const sizeSelect = btn.closest('.card-actions').querySelector('.size-select');
+        const card = btn.closest('.product-card');
+        const sizeSelect = card.querySelector('.size-select');
         const ukuran = sizeSelect.value;
-        tambahKeKeranjang(id, name, parseInt(price, 10), ukuran);
-        if (ukuran) sizeSelect.value = ''; // reset pilihan setelah berhasil
+        const gambar = card.querySelector('img').src;
+        tambahKeKeranjang(id, name, parseInt(price, 10), ukuran, gambar);
+        if (ukuran) sizeSelect.value = '';
     });
 });
 
