@@ -55,7 +55,7 @@ a { text-decoration: none; color: inherit; }
 
 /* ===== HERO ===== */
 .hero {
-    height: 70vh;
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -754,7 +754,7 @@ footer {
         justify-content: flex-end;
     }
 
-    .hero { height: 60vh; }
+    .hero { height: 90vh; }
     .hero-content h1 { font-size: 2rem; }
     .hero-content p { font-size: .9rem; padding: 0 10px; }
 
@@ -799,7 +799,7 @@ footer {
         white-space: nowrap;
     }
 
-    .hero { height: 55vh; }
+    .hero { height: 85vh; }
     .hero-content h1 { font-size: 1.6rem; letter-spacing: 1px; }
     .hero-content p { font-size: .85rem; }
     .btn-hero { padding: 10px 22px; font-size: .85rem; }
