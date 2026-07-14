@@ -1,187 +1,155 @@
-# THE DARK SHOES — Business Overview
+# The Dark Shoes — Business Overview
 
-> Dokumen ini merangkum gambaran bisnis (business overview) dari platform e-commerce **THE DARK SHOES**, disusun berdasarkan struktur, fitur, dan katalog yang sudah dibangun di website (produk, keranjang, checkout, hingga halaman sukses pesanan).
+## Data Diri Mahasiswa
 
----
+| Keterangan | Detail |
+|---|---|
+| Nama | Nurul Addafi Asti |
+| NIM | *(isi NIM)* |
+| Kelas | Administrasi Bisnis 3 |
+| Mata Kuliah | *(isi nama mata kuliah)* |
+| Dosen Pengampu | *(isi nama dosen)* |
+| Program Studi | *(isi program studi)* |
+| Perguruan Tinggi | *(isi nama kampus)* |
+| Judul Tugas | Website E-Commerce Sederhana "The Dark Shoes" |
+| Link Repository | https://github.com/nuruladdafiasti/-ecommerce-sederhana-nurul-addafiasti |
+| Link Demo (GitHub Pages) | https://nuruladdafiasti.github.io/-ecommerce-sederhana-nurul-addafiasti/ |
 
-## 1. Nama Bisnis, Deskripsi, dan Value Proposition
+## 1. Profil Bisnis
 
-**Nama Bisnis:** THE DARK SHOES
+**Nama Bisnis:** The Dark Shoes
 
-**Deskripsi Singkat:**
-THE DARK SHOES adalah toko sepatu online yang menjual berbagai kategori alas kaki — Flat Shoes, Heels, Sneakers, Running Shoes, dan Boots — melalui platform e-commerce yang dilengkapi fitur katalog produk, filter kategori, keranjang belanja, dan proses checkout end-to-end.
-
-**Tagline:** *"Koleksi Sepatu yang ga cuma nyaman, tapi juga bikin kamu makin keren."*
+**Deskripsi:**
+The Dark Shoes adalah toko sepatu online yang menjual berbagai jenis alas kaki untuk perempuan dan laki-laki muda urban — mulai dari flat shoes, heels, sneakers, running shoes, hingga boots. Website ini dibangun sebagai platform e-commerce sederhana yang memungkinkan pelanggan menjelajahi katalog produk, melihat detail, memasukkan barang ke keranjang, dan melakukan checkout secara mandiri.
 
 **Value Proposition:**
-- **Kenyamanan sekaligus gaya** — setiap produk diposisikan tidak hanya nyaman dipakai, tapi juga meningkatkan penampilan.
-- **Variasi kategori lengkap dalam satu tempat** — dari sepatu formal (heels), kasual (flat shoes, sneakers), hingga fungsional (running, boots), sehingga pelanggan tidak perlu berpindah toko untuk kebutuhan berbeda.
-- **Pengalaman belanja yang mudah** — navigasi kategori, detail produk lengkap (deskripsi, ukuran, stok), dan proses checkout yang jelas dari keranjang hingga konfirmasi pesanan.
-- **Transparansi stok dan ukuran** — setiap produk menampilkan status stok real-time dan pilihan ukuran (36–40), mengurangi risiko kesalahan pemesanan.
-
----
+- Koleksi sepatu yang tidak hanya nyaman dipakai seharian, tapi juga tetap stylish ("ga cuma nyaman, tapi juga bikin kamu makin keren").
+- Kategori produk lengkap dalam satu tempat: flat shoes, heels, sneakers, running, dan boots — sehingga pelanggan tidak perlu berpindah toko untuk kebutuhan alas kaki yang berbeda-beda.
+- Pengalaman belanja online yang simpel dan cepat: filter kategori, pencarian nama produk, filter rentang harga, serta proses checkout yang ringkas.
+- Transparansi stok real-time pada setiap produk, sehingga pelanggan tahu ketersediaan barang sebelum membeli.
 
 ## 2. Target Market & Segmentasi Pelanggan
 
-**Target Market Utama:**
-- Remaja hingga dewasa muda (usia ±16–35 tahun) yang melek digital dan terbiasa belanja online.
-- Konsumen dengan gaya hidup aktif maupun profesional yang butuh sepatu untuk berbagai keperluan (kuliah, kerja, olahraga, acara formal).
+**Target utama:**
+- Usia 18–35 tahun, kalangan pelajar/mahasiswa dan pekerja muda.
+- Berdomisili di area urban yang terbiasa berbelanja online.
+- Peduli pada gaya penampilan namun tetap mementingkan kenyamanan sehari-hari.
 
-**Segmentasi Pelanggan:**
-
-| Segmen | Kebutuhan | Produk Relevan |
+**Segmentasi berdasarkan kategori produk:**
+| Segmen | Kebutuhan | Kategori Terkait |
 |---|---|---|
-| Mahasiswa/Pekerja Kantoran | Sepatu kasual & semi-formal, nyaman dipakai seharian | Flat Shoes, Sneakers |
-| Profesional/Wanita Karier | Sepatu formal untuk kerja & acara resmi | Heels |
-| Pelari & Penggiat Olahraga | Sepatu dengan cushioning & breathability | Running Shoes |
-| Pecinta Gaya Streetwear/Outdoor | Sepatu tahan lama dengan tampilan maskulin/rugged | Boots, Sneakers Chunky |
-
-**Segmentasi berdasarkan perilaku:**
-- Pembeli yang sensitif harga → tertarik pada rentang harga Rp 299.999–399.999 (Flat Shoes, entry-level Heels).
-- Pembeli yang mengutamakan fungsi/performa → kategori Running Shoes (Rp 599.999–699.999).
-- Pembeli premium/gaya hidup → kategori Boots kulit (Rp 699.999–799.999).
-
----
+| Mahasiswa/pekerja kantoran | Sepatu kasual & semi-formal untuk aktivitas harian | Flat Shoes, Sneakers |
+| Pekerja profesional/acara formal | Tampilan elegan untuk kerja & acara resmi | Heels |
+| Pelari & penggemar olahraga | Performa & kenyamanan saat berolahraga | Running |
+| Penyuka gaya rugged/streetwear | Tampilan maskulin, tahan lama, cuaca ekstrem | Boots |
 
 ## 3. Analisis Pasar Singkat & Kompetitor
 
-**Kondisi Pasar:**
-Industri fashion sepatu di Indonesia terus tumbuh seiring meningkatnya adopsi belanja online, didorong oleh media sosial dan marketplace besar. Persaingan didominasi oleh brand lokal, brand global, dan marketplace multi-kategori.
+**Tren pasar:**
+Penjualan sepatu online di Indonesia terus tumbuh seiring meningkatnya kepercayaan konsumen terhadap belanja daring dan maraknya konten fesyen di media sosial. Konsumen semakin mencari kombinasi harga terjangkau, variasi model, dan kemudahan proses transaksi.
 
-**Peluang:**
-- Segmentasi kategori yang jelas (flat, heels, sneakers, running, boots) memudahkan positioning dibanding toko yang menjual campur-aduk tanpa fokus.
-- Deskripsi produk yang informatif (bahan, fitur, kegunaan) dapat meningkatkan kepercayaan dibanding listing marketplace yang seringkali generik.
+**Kompetitor tidak langsung (referensi pasar):**
+- Marketplace besar (Shopee, Tokopedia) — jangkauan luas, harga sangat kompetitif, namun katalog sangat ramai sehingga branding toko individu kurang menonjol.
+- Brand sepatu lokal DTC (direct-to-consumer) — memiliki identitas merek kuat namun umumnya fokus pada satu kategori (misalnya hanya sneakers atau hanya heels).
 
-**Kompetitor (gambaran umum kategori pesaing):**
-| Jenis Kompetitor | Contoh | Kekuatan Kompetitor | Celah yang Bisa Dimanfaatkan |
-|---|---|---|---|
-| Marketplace besar | Shopee, Tokopedia | Jangkauan luas, harga sangat kompetitif | Pengalaman belanja generik, kurang personal |
-| Brand sepatu lokal | Toko sepatu lokal berbasis Instagram/Shopee | Harga terjangkau, dekat dengan komunitas lokal | Website/UX terbatas, jarang ada sistem katalog terstruktur |
-| Brand sepatu global | Retailer sneakers/running internasional | Kualitas & branding kuat | Harga lebih tinggi, kurang fleksibel untuk pasar menengah |
-
-**Diferensiasi THE DARK SHOES:** menghadirkan pengalaman belanja terstruktur (filter kategori, detail produk, checkout jelas) dengan harga menengah yang terjangkau untuk segmen mahasiswa hingga pekerja muda.
-
----
+**Posisi The Dark Shoes:**
+Bermain di ceruk toko multi-kategori dengan identitas visual "dark/edgy" yang konsisten, menyasar pelanggan yang ingin satu tempat belanja untuk berbagai kebutuhan alas kaki, dengan pengalaman belanja yang ringan dan tidak bertele-tele dibanding marketplace besar.
 
 ## 4. Strategi Manajemen Produk & Katalog
 
-**Struktur Kategori (5 kategori utama, 4 varian produk per kategori):**
-1. **Flat Shoes** — Rp 299.999–399.999
-2. **Heels** — Rp 399.999–499.999
-3. **Sneakers** — Rp 499.999–599.999
-4. **Running Shoes** — Rp 599.999–699.999
-5. **Boots** — Rp 699.999–799.999
+**Struktur kategori (5 kategori, 4 produk per kategori):**
+- Flat Shoes — kulit sintetis, suede, desain minimalis hingga klasik
+- Heels — block heel, pointed toe, strap, patent leather
+- Sneakers — casual, chunky streetwear, canvas breathable, high-top
+- Running — cushioning responsif, mesh breathable, grip kuat, desain aerodinamis
+- Boots — kulit asli, chelsea, combat, kulit premium
 
-**Elemen Katalog yang Diterapkan:**
-- **Deskripsi menarik & spesifik per produk** — tiap item punya narasi unik (contoh: "Sneakers chunky dengan aksen warna kontras, gaya streetwear yang lagi hits"), bukan sekadar nama generik. Ini membantu calon pembeli membayangkan manfaat produk, bukan hanya spesifikasi.
-- **Visual produk** — setiap kartu produk menampilkan foto utama; disarankan menambahkan multi-angle image dan foto detail bahan pada halaman detail untuk meningkatkan kepercayaan.
-- **Informasi stok transparan** — label stok (termasuk status habis/"Stok: 0") membantu pelanggan mengambil keputusan cepat dan mencegah over-promise.
-- **Pilihan ukuran terstandar** (36–40) di setiap kartu produk maupun modal detail, mempercepat proses seleksi sebelum checkout.
+**Standar deskripsi produk:**
+Setiap produk memiliki deskripsi singkat yang menonjolkan bahan, kenyamanan, dan konteks penggunaan (misalnya "cocok untuk aktivitas kampus atau kantor"), sehingga pelanggan bisa langsung membayangkan momen pemakaiannya tanpa perlu bertanya lebih lanjut.
 
-**Rekomendasi Pengembangan Katalog:**
-- Tambahkan badge dinamis seperti "Stok Terbatas" atau "Baru" untuk mendorong urgensi.
-- Kembangkan sistem tag lintas kategori (mis. "Cocok untuk Kerja", "Waterproof") agar pencarian lebih personal.
-- Standarisasi rentang ukuran per kategori (mis. Heels dan Boots mungkin butuh rentang ukuran lebih luas dari 36–40).
+**Strategi visual:**
+- Foto produk konsisten per kategori (folder `image/`) agar tampilan grid katalog rapi dan seragam.
+- Label stok ditampilkan langsung di kartu produk (misalnya "Stok: 5") untuk transparansi dan mendorong urgensi beli saat stok menipis.
+- Pemilihan ukuran (36–40) tersedia langsung di kartu produk maupun halaman detail, mengurangi friksi sebelum checkout.
 
----
+**Manajemen katalog ke depan:**
+- Rotasi produk baru per musim/kategori untuk menjaga katalog tetap segar.
+- Penambahan varian warna sebagai pengembangan lanjutan.
 
 ## 5. Model Bisnis & Revenue Stream
 
-**Model Bisnis:** Direct-to-Consumer (D2C) E-Commerce — penjualan sepatu langsung dari toko ke konsumen melalui website sendiri, tanpa perantara marketplace.
+**Model bisnis:** Direct-to-consumer (D2C) retail online — penjualan produk sepatu secara langsung ke konsumen akhir melalui website sendiri, tanpa perantara marketplace.
 
-**Sumber Pendapatan (Revenue Stream):**
-1. **Penjualan produk (utama)** — margin dari selisih harga jual dan harga pokok tiap kategori sepatu.
-2. **Ongkos kirim** — potensi revenue tambahan atau strategi subsidi ongkir untuk mendorong konversi (terlihat pada bagian ringkasan pembayaran "Ongkos Kirim" di halaman sukses).
-3. **Upsell & cross-sell** — menawarkan produk pelengkap (kaos kaki, cairan pembersih sepatu, aksesori) saat checkout.
-4. **Program membership/loyalitas (potensi pengembangan)** — biaya keanggotaan atau insentif repeat order untuk pelanggan setia.
-
----
+**Sumber pendapatan (revenue stream):**
+- Penjualan produk sepatu per unit (harga berkisar Rp 299.999 – Rp 799.999 tergantung kategori dan material).
+- Potensi upsell melalui rekomendasi kategori terkait (misalnya pelanggan yang membeli running shoes ditawarkan aksesori pelengkap di pengembangan selanjutnya).
+- Potensi biaya ongkos kirim sebagai pos pendapatan tambahan tergantung kebijakan pengiriman yang diterapkan.
 
 ## 6. Strategi Harga, Promosi, dan Diskon
 
-**Strategi Harga:**
-- **Tiered pricing berdasarkan kategori** — harga naik seiring kompleksitas produksi/fungsi: Flat Shoes (termurah) → Boots (termahal), mencerminkan value dan bahan yang digunakan.
-- **Psychological pricing** — seluruh harga menggunakan format Rp xxx.999, umum digunakan di e-commerce Indonesia untuk kesan harga lebih terjangkau.
+**Strategi harga:**
+Penetapan harga bertingkat berdasarkan kategori dan kompleksitas material:
+- Flat Shoes: Rp 299.999 – Rp 399.999 (entry price, volume tinggi)
+- Heels & Sneakers: Rp 399.999 – Rp 599.999 (mid-range)
+- Running & Boots: Rp 599.999 – Rp 799.999 (premium, material lebih teknis/kulit asli)
 
-**Strategi Promosi:**
-- Promosi musiman (mis. diskon akhir tahun, back-to-campus untuk Flat Shoes/Sneakers, diskon "cuaca hujan" untuk Boots).
-- Highlight produk unggulan di section "Produk Unggulan" pada homepage — bisa dikembangkan menjadi carousel promo/banner diskon.
-- Program referral atau diskon untuk pembelian pertama guna meningkatkan akuisisi pelanggan baru.
+Filter harga pada website (di bawah Rp400rb, Rp400–599rb, Rp600–799rb, Rp800rb ke atas) dirancang agar pelanggan dengan berbagai budget dapat langsung menemukan produk yang sesuai.
 
-**Strategi Diskon:**
-- Diskon berbasis stok menipis (produk dengan stok rendah seperti 2–5 unit) untuk mempercepat perputaran inventori.
-- Bundling diskon lintas kategori (mis. beli Sneakers + Running Shoes dapat potongan harga).
-- Diskon khusus member/loyal customer sebagai bagian dari strategi retensi.
+**Strategi promosi:**
+- Highlight kategori "Produk Unggulan" di halaman utama untuk mengarahkan perhatian pelanggan.
+- Copywriting hero section yang santai dan relatable ("ga cuma nyaman, tapi juga bikin kamu makin keren") untuk membangun kedekatan dengan target market muda.
+- Potensi promosi musiman (contoh: diskon akhir tahun, flash sale kategori tertentu) sebagai pengembangan lanjutan dari sistem katalog yang sudah ada.
 
----
+**Strategi diskon (rencana pengembangan):**
+- Diskon untuk produk dengan stok rendah agar cepat terjual (clearance).
+- Diskon bundling lintas kategori (misalnya beli sneakers + flat shoes).
+- Kode voucher untuk pelanggan baru sebagai insentif transaksi pertama.
 
 ## 7. Proses Checkout & Simulasi Payment Gateway
 
-**Alur Checkout yang Sudah Diterapkan:**
-1. Pelanggan menambahkan produk ke keranjang lengkap dengan pilihan ukuran.
-2. Meninjau isi keranjang & total belanja di sidebar keranjang.
-3. Mengisi form checkout: nama penerima, nomor telepon, alamat pengiriman.
-4. Memilih metode pembayaran: **Transfer Bank**, **COD (Bayar di Tempat)**, atau **E-Wallet**.
-5. Konfirmasi pesanan → menampilkan halaman sukses dengan nomor pesanan, ringkasan pembayaran (subtotal, ongkos kirim, total), status pesanan, dan tahapan pengiriman (Diterima → Dikemas → Dikirim → Selesai).
+**Alur checkout saat ini:**
+1. Pelanggan memilih ukuran dan menambahkan produk ke keranjang (`Tambah ke Keranjang`).
+2. Keranjang menampilkan ringkasan item dan total harga, dapat diakses melalui ikon 🛒 di navbar.
+3. Pelanggan menekan tombol **Checkout**, lalu mengisi form: Nama Penerima, No. Telepon, Alamat Pengiriman, dan memilih Metode Pembayaran (Transfer Bank / COD / E-Wallet).
+4. Setelah pesanan dibuat, sistem menampilkan halaman sukses dengan nomor pesanan, status pesanan, ringkasan pembayaran, dan tahapan proses (Diterima → Dikemas → Dikirim → Selesai).
 
-**Simulasi Payment Gateway (Rekomendasi Implementasi):**
-Untuk memproses metode "Transfer Bank" dan "E-Wallet" secara nyata (bukan dummy), disarankan integrasi payment gateway lokal:
-
-| Opsi | Kelebihan | Cocok Untuk |
-|---|---|---|
-| **Midtrans** | Dukungan lengkap metode lokal (VA, e-wallet, QRIS, kartu kredit), populer di kalangan UMKM/startup Indonesia | Bisnis skala kecil–menengah dengan basis pelanggan domestik |
-| **Xendit** | API fleksibel, dashboard analitik transaksi kuat, mendukung disbursement | Bisnis yang butuh skalabilitas dan pelaporan finansial detail |
-| **PayPal** | Cocok untuk transaksi lintas negara/mata uang asing | Jika ke depan THE DARK SHOES membuka penjualan internasional |
-
-**Rekomendasi tahap simulasi (dummy) sebelum go-live:**
-- Gunakan mode *sandbox/testing* masing-masing gateway (Midtrans Sandbox, Xendit Test Mode, PayPal Sandbox) untuk mensimulasikan pembayaran tanpa transaksi nyata.
-- Terapkan status pembayaran dinamis (Menunggu Pembayaran → Pembayaran Berhasil → Gagal) yang terhubung ke webhook gateway, bukan status statis seperti saat ini.
-- Untuk metode COD, tetap simpan validasi manual oleh admin sebelum status "Pembayaran Berhasil" ditampilkan.
-
----
+**Simulasi payment gateway (dummy):**
+Untuk kebutuhan tugas ini, proses pembayaran disimulasikan menggunakan alur **Midtrans (dummy/sandbox)**:
+- Saat pelanggan memilih metode pembayaran (Transfer Bank/E-Wallet) dan menekan "Buat Pesanan", sistem menganggap seolah-olah mengarahkan ke halaman Midtrans Snap untuk konfirmasi pembayaran.
+- Karena ini simulasi tanpa backend nyata, status pembayaran langsung ditandai "Pembayaran Berhasil" pada halaman sukses setelah form checkout disubmit — merepresentasikan callback/notifikasi sukses yang biasanya dikirim payment gateway ke sistem toko.
+- Untuk metode COD, status yang ditampilkan adalah "Pesanan Diterima" tanpa proses pembayaran di muka, sesuai karakteristik COD.
+- Pada implementasi produksi nyata, integrasi ini akan menggunakan Midtrans Snap API dengan server-side untuk generate transaction token, verifikasi signature, dan update status pesanan berdasarkan webhook notifikasi resmi dari Midtrans.
 
 ## 8. Rencana SEO, Keamanan, dan Pemeliharaan
 
-**Rencana SEO:**
-- Optimasi judul & meta description tiap halaman produk menggunakan kata kunci relevan (mis. "sepatu flat wanita nyaman", "sneakers chunky terbaru").
-- Struktur URL ramah SEO per kategori/produk (mis. `/produk/flat-shoes/flat-shoes-1`).
-- Optimasi gambar (alt text deskriptif — sudah ada dasar seperti "flat shoes 1", perlu diperkaya dengan kata kunci).
-- Konten blog pendukung (tips memilih sepatu, panduan ukuran) untuk mendatangkan trafik organik.
-- Pastikan situs mobile-friendly dan cepat dimuat (compress gambar produk).
+**SEO:**
+- Penggunaan judul halaman dan meta yang jelas ("The Dark Shoes") agar mudah dikenali di hasil pencarian.
+- Struktur heading yang rapi (H1 di hero, H2 di judul seksi, H3 di nama produk) untuk membantu mesin pencari memahami hierarki konten.
+- Atribut `alt` pada setiap gambar produk (misalnya "flat shoes 1") untuk aksesibilitas sekaligus SEO gambar.
+- Deskripsi produk unik per item (bukan duplikat) untuk menghindari konten yang dianggap tipis/duplikat oleh mesin pencari.
+- Rencana lanjutan: menambahkan meta description, open graph tags, dan sitemap.xml saat website dikembangkan lebih lanjut.
 
-**Rencana Keamanan:**
-- Migrasi/penggunaan HTTPS di seluruh halaman, termasuk form checkout yang menampung data pribadi (nama, telepon, alamat).
-- Validasi input form (saat ini form checkout sudah memiliki atribut `required`, perlu ditambah validasi format nomor telepon & sanitasi input di sisi server).
-- Enkripsi data pelanggan yang tersimpan di database (nama, alamat, riwayat pesanan).
-- Integrasi payment gateway resmi (Midtrans/Xendit/PayPal) yang sudah tersertifikasi PCI-DSS, sehingga data kartu/pembayaran tidak disimpan langsung di sistem toko.
-- Backup data transaksi & katalog secara berkala.
+**Keamanan:**
+- Validasi input pada form checkout (field wajib diisi: nama, telepon, alamat) untuk mencegah data kosong/salah format.
+- Rencana lanjutan bila terhubung ke backend nyata: enkripsi HTTPS, sanitasi input untuk mencegah XSS/SQL injection, serta penyimpanan data pelanggan yang mematuhi praktik keamanan data.
+- Data keranjang belanja disimpan secara lokal di browser (localStorage) sehingga tidak ada data sensitif pelanggan yang tersimpan di sisi server pada tahap prototipe ini.
 
-**Rencana Pemeliharaan:**
-- Update stok dan katalog produk secara rutin (menghindari data statis seperti stok tetap di kode saat ini).
-- Uji fungsional berkala terhadap fitur keranjang, checkout, dan filter kategori setelah setiap perubahan.
-- Monitoring uptime website dan kecepatan loading halaman.
-- Review dan refresh deskripsi/foto produk secara berkala mengikuti tren fashion.
-
----
+**Pemeliharaan (maintenance):**
+- Pembaruan stok dan harga produk dilakukan secara berkala melalui pembaruan data pada file katalog.
+- Pengecekan tautan gambar dan fungsi tombol (tambah keranjang, filter, checkout) secara rutin untuk memastikan tidak ada broken feature.
+- Dokumentasi commit history yang rapi di GitHub agar riwayat perubahan mudah ditelusuri dan di-rollback bila diperlukan.
 
 ## 9. Rencana Penggunaan Data Analytics untuk Pengambilan Keputusan
 
-**Data yang Bisa Dikumpulkan dari Aktivitas Website:**
-- Produk yang paling sering dilihat (klik "Lihat Detail") vs yang paling sering dibeli.
-- Kategori dengan konversi tertinggi (mis. Sneakers vs Boots).
-- Ukuran yang paling banyak dipilih per kategori — untuk perencanaan stok yang lebih akurat.
-- Tingkat cart abandonment (produk masuk keranjang tapi tidak checkout).
-- Metode pembayaran yang paling sering dipilih (Transfer Bank, COD, E-Wallet).
+Website telah terintegrasi dengan **Google Analytics (dummy)** melalui `gtag.js`, dengan fungsi `trackEvent()` yang dapat dipakai untuk melacak interaksi penting pelanggan. Rencana pemanfaatan datanya:
 
-**Pemanfaatan untuk Pengambilan Keputusan:**
-- **Manajemen Stok:** produk dengan stok rendah namun permintaan tinggi diprioritaskan untuk restock; produk dengan stok menumpuk tanpa penjualan dipertimbangkan untuk didiskon atau dihentikan.
-- **Strategi Harga:** analisis elastisitas harga per kategori untuk menentukan apakah harga masih kompetitif.
-- **Personalisasi & Rekomendasi:** menampilkan rekomendasi produk berdasarkan histori kategori yang sering dilihat pelanggan.
-- **Optimasi Konversi:** mengidentifikasi titik drop-off dalam funnel checkout (mis. banyak pelanggan berhenti di langkah pengisian alamat) untuk perbaikan UX.
-- **Perencanaan Promosi:** menjadwalkan promosi berdasarkan pola pembelian musiman yang teridentifikasi dari data historis.
-
-**Tools yang Dapat Digunakan:** Google Analytics/Google Tag Manager untuk perilaku pengunjung, serta dashboard internal (terhubung ke database pesanan) untuk analisis penjualan dan inventori secara real-time.
+- **Analisis produk terlaris per kategori:** melacak event "Tambah ke Keranjang" per produk untuk mengetahui kategori dan item mana yang paling diminati, sebagai dasar keputusan restock.
+- **Analisis funnel checkout:** melacak berapa banyak pelanggan yang membuka keranjang vs. yang benar-benar menyelesaikan checkout, untuk mengidentifikasi titik drop-off dalam proses belanja.
+- **Analisis pencarian & filter:** melacak kata kunci yang digunakan di kolom pencarian serta kategori/filter harga yang paling sering dipilih, untuk memahami preferensi harga dan gaya pelanggan.
+- **Analisis stok kritis:** menyandingkan data stok rendah/habis dengan tingkat minat (klik detail/tambah keranjang) untuk memprioritaskan produk mana yang perlu segera di-restock.
+- **Pengambilan keputusan bisnis:** hasil analisis di atas digunakan untuk menentukan produk yang perlu dipromosikan lebih agresif, kategori yang perlu ditambah variannya, serta penyesuaian strategi harga berdasarkan rentang harga yang paling banyak dieksplorasi pelanggan.
 
 ---
 
-*Dokumen ini disusun sebagai gambaran menyeluruh (business overview) THE DARK SHOES berdasarkan struktur dan fitur yang telah dibangun pada platform, sebagai dasar pengembangan bisnis lebih lanjut.*
+**Kontak:** nuruladdafiasti@gmail.com | +62 896 5263 8714
+**Live Demo:** https://nuruladdafiasti.github.io/-ecommerce-sederhana-nurul-addafiasti/
