@@ -71,62 +71,72 @@ function renderStok() {
 // =======================================================
 // FITUR KATEGORI
 // =======================================================
-function initFilterKategori() {
-    const tombolKategori = document.querySelectorAll('.cat-btn');
+// =======================================================
+// FITUR FILTER GABUNGAN: KATEGORI + HARGA + PENCARIAN NAMA
+// =======================================================
+let kategoriAktif = 'semua';
+
+function applyFilters() {
     const semuaProduk = document.querySelectorAll('.product-card');
     const emptyMsg = document.getElementById('emptyMsg');
+    const keyword = document.getElementById('searchInput').value.toLowerCase().trim();
+    const priceRange = document.getElementById('priceFilter').value;
+
+    let tampil = 0;
+
+    semuaProduk.forEach(card => {
+        const nama = card.querySelector('h3').textContent.toLowerCase();
+        const harga = parseInt(card.querySelector('.btn-add').dataset.price, 10);
+        const kategori = card.dataset.category;
+
+        const cocokKategori = kategoriAktif === 'semua' || kategori === kategoriAktif;
+        const cocokNama = keyword === '' || nama.includes(keyword);
+
+        let cocokHarga = true;
+        if (priceRange !== 'all') {
+            const [min, max] = priceRange.split('-').map(Number);
+            cocokHarga = harga >= min && harga <= max;
+        }
+
+        if (cocokKategori && cocokNama && cocokHarga) {
+            card.style.display = '';
+            tampil++;
+        } else {
+            card.style.display = 'none';
+        }
+    });
+
+    emptyMsg.style.display = tampil === 0 ? 'block' : 'none';
+}
+
+function initFilterKategori() {
+    const tombolKategori = document.querySelectorAll('.cat-btn');
 
     tombolKategori.forEach(btn => {
         btn.addEventListener('click', () => {
             tombolKategori.forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
-
-            const kategori = btn.dataset.category;
-            let tampil = 0;
-
-            semuaProduk.forEach(card => {
-                if (kategori === 'semua' || card.dataset.category === kategori) {
-                    card.style.display = '';
-                    tampil++;
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-
-            emptyMsg.style.display = tampil === 0 ? 'block' : 'none';
+            kategoriAktif = btn.dataset.category;
+            applyFilters();
         });
     });
 }
+
 function initSearch() {
     const searchInput = document.getElementById('searchInput');
-    const semuaProduk = document.querySelectorAll('.product-card');
-    const emptyMsg = document.getElementById('emptyMsg');
+    const priceFilter = document.getElementById('priceFilter');
 
- searchInput.addEventListener('input', () => {
+    searchInput.addEventListener('input', () => {
         const keyword = searchInput.value.toLowerCase().trim();
-        let tampil = 0;
-
         if (keyword.length > 2) {
             trackEvent('search', 'engagement', keyword);
         }
+        applyFilters();
+    });
 
-        // Reset filter kategori ke "Semua" saat search aktif
-        document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
-        document.querySelector('.cat-btn[data-category="semua"]').classList.add('active');
-
-        semuaProduk.forEach(card => {
-            const nama = card.querySelector('h3').textContent.toLowerCase();
-            const harga = card.querySelector('.price').textContent.toLowerCase();
-
-            if (nama.includes(keyword) || harga.includes(keyword)) {
-                card.style.display = '';
-                tampil++;
-            } else {
-                card.style.display = 'none';
-            }
-        });
-
-        emptyMsg.style.display = tampil === 0 ? 'block' : 'none';
+    priceFilter.addEventListener('change', () => {
+        trackEvent('filter_price', 'engagement', priceFilter.value);
+        applyFilters();
     });
 }
 // =======================================================
@@ -397,6 +407,7 @@ document.addEventListener('DOMContentLoaded', () => {
     renderStok();
     initFilterKategori();
     initSearch(); 
+    applyFilters(); 
     initDetailModal();
     renderCart();
 
