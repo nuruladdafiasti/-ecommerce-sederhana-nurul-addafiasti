@@ -54,9 +54,18 @@
         <h2 class="section-title">Produk Unggulan</h2>
 
         <!-- FILTER KATEGORI -->
-        <div class="search-box">
-            <input type="text" id="searchInput" placeholder="Cari produk (nama atau harga)...">
-        </div>
+        <div class="filter-row">
+    <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Cari nama produk...">
+    </div>
+    <select id="priceFilter" class="price-filter">
+        <option value="all">Semua Harga</option>
+        <option value="0-399999">Di bawah Rp400.000</option>
+        <option value="400000-599999">Rp400.000 - Rp599.999</option>
+        <option value="600000-799999">Rp600.000 - Rp799.999</option>
+        <option value="800000-999999999">Rp800.000 ke atas</option>
+    </select>
+</div>
         <div class="category-filter" id="categoryFilter">
             <button class="cat-btn active" data-category="semua">Semua</button>
             <button class="cat-btn" data-category="flat">Flat Shoes</button>
@@ -74,7 +83,7 @@
                 <p class="price">Rp 299.999</p>
                 <p class="stock" data-stock="20">Stok: 20</p>
                 <div class="card-actions">
-                 <select class="size-select" data-id="flat1">
+                 <select class="size-select">
                     <option value="">Pilih Ukuran</option>
                     <option value="36">36</option>
                     <option value="37">37</option>
@@ -93,7 +102,7 @@
                 <p class="price">Rp 399.999</p>
                 <p class="stock" data-stock="5">Stok: 5</p>
                 <div class="card-actions">
-                 <select class="size-select" data-id="flat1">
+                 <select class="size-select">
                     <option value="">Pilih Ukuran</option>
                     <option value="36">36</option>
                     <option value="37">37</option>
@@ -112,7 +121,7 @@
                 <p class="price">Rp 299.999</p>
                 <p class="stock" data-stock="0">Stok: 0</p>
                 <div class="card-actions">
-                 <select class="size-select" data-id="flat1">
+                 <select class="size-select">
                     <option value="">Pilih Ukuran</option>
                     <option value="36">36</option>
                     <option value="37">37</option>
@@ -131,7 +140,7 @@
                 <p class="price">Rp 399.999</p>
                 <p class="stock" data-stock="14">Stok: 14</p>
                 <div class="card-actions">
-                 <select class="size-select" data-id="flat1">
+                 <select class="size-select">
                     <option value="">Pilih Ukuran</option>
                     <option value="36">36</option>
                     <option value="37">37</option>
@@ -150,7 +159,7 @@
                 <p class="price">Rp 399.999</p>
                 <p class="stock" data-stock="6">Stok: 6</p>
                 <div class="card-actions">
-                 <select class="size-select" data-id="flat1">
+                 <select class="size-select">
                     <option value="">Pilih Ukuran</option>
                     <option value="36">36</option>
                     <option value="37">37</option>
@@ -169,7 +178,7 @@
                 <p class="price">Rp 499.999</p>
                 <p class="stock" data-stock="3">Stok: 3</p>
                 <div class="card-actions">
-                 <select class="size-select" data-id="flat1">
+                 <select class="size-select">
                     <option value="">Pilih Ukuran</option>
                     <option value="36">36</option>
                     <option value="37">37</option>
@@ -188,7 +197,7 @@
                 <p class="price">Rp 399.999</p>
                 <p class="stock" data-stock="9">Stok: 9</p>
                 <div class="card-actions">
-                 <select class="size-select" data-id="flat1">
+                 <select class="size-select">
                     <option value="">Pilih Ukuran</option>
                     <option value="36">36</option>
                     <option value="37">37</option>
@@ -207,7 +216,7 @@
                 <p class="price">Rp 499.999</p>
                 <p class="stock" data-stock="4">Stok: 4</p>
                 <div class="card-actions">
-                 <select class="size-select" data-id="flat1">
+                 <select class="size-select">
                     <option value="">Pilih Ukuran</option>
                     <option value="36">36</option>
                     <option value="37">37</option>
@@ -226,7 +235,7 @@
                 <p class="price">Rp 499.999</p>
                 <p class="stock" data-stock="10">Stok: 10</p>
                 <div class="card-actions">
-                 <select class="size-select" data-id="flat1">
+                 <select class="size-select">
                     <option value="">Pilih Ukuran</option>
                     <option value="36">36</option>
                     <option value="37">37</option>
@@ -245,7 +254,7 @@
                 <p class="price">Rp 599.999</p>
                 <p class="stock" data-stock="7">Stok: 7</p>
                 <div class="card-actions">
-                 <select class="size-select" data-id="flat1">
+                 <select class="size-select">
                     <option value="">Pilih Ukuran</option>
                     <option value="36">36</option>
                     <option value="37">37</option>
@@ -264,7 +273,7 @@
                 <p class="price">Rp 499.999</p>
                 <p class="stock" data-stock="0">Stok: 0</p>
                 <div class="card-actions">
-                 <select class="size-select" data-id="flat1">
+                 <select class="size-select">
                     <option value="">Pilih Ukuran</option>
                     <option value="36">36</option>
                     <option value="37">37</option>
@@ -283,7 +292,7 @@
                 <p class="price">Rp 599.999</p>
                 <p class="stock" data-stock="6">Stok: 6</p>
                 <div class="card-actions">
-                 <select class="size-select" data-id="flat1">
+                 <select class="size-select">
                     <option value="">Pilih Ukuran</option>
                     <option value="36">36</option>
                     <option value="37">37</option>
@@ -302,7 +311,7 @@
                 <p class="price">Rp 699.999</p>
                 <p class="stock" data-stock="5">Stok: 5</p>
                 <div class="card-actions">
-                 <select class="size-select" data-id="flat1">
+                 <select class="size-select">
                     <option value="">Pilih Ukuran</option>
                     <option value="36">36</option>
                     <option value="37">37</option>
@@ -321,7 +330,7 @@
                 <p class="price">Rp 599.999</p>
                 <p class="stock" data-stock="8">Stok: 8</p>
                 <div class="card-actions">
-                 <select class="size-select" data-id="flat1">
+                 <select class="size-select">
                     <option value="">Pilih Ukuran</option>
                     <option value="36">36</option>
                     <option value="37">37</option>
@@ -340,7 +349,7 @@
                 <p class="price">Rp 699.999</p>
                 <p class="stock" data-stock="2">Stok: 2</p>
                 <div class="card-actions">
-                 <select class="size-select" data-id="flat1">
+                 <select class="size-select">
                     <option value="">Pilih Ukuran</option>
                     <option value="36">36</option>
                     <option value="37">37</option>
@@ -359,7 +368,7 @@
                 <p class="price">Rp 599.999</p>
                 <p class="stock" data-stock="11">Stok: 11</p>
                 <div class="card-actions">
-                 <select class="size-select" data-id="flat1">
+                 <select class="size-select">
                     <option value="">Pilih Ukuran</option>
                     <option value="36">36</option>
                     <option value="37">37</option>
@@ -378,7 +387,7 @@
                 <p class="price">Rp 699.999</p>
                 <p class="stock" data-stock="4">Stok: 4</p>
                 <div class="card-actions">
-                 <select class="size-select" data-id="flat1">
+                 <select class="size-select">
                     <option value="">Pilih Ukuran</option>
                     <option value="36">36</option>
                     <option value="37">37</option>
@@ -397,7 +406,7 @@
                 <p class="price">Rp 799.999</p>
                 <p class="stock" data-stock="3">Stok: 3</p>
                 <div class="card-actions">
-                 <select class="size-select" data-id="flat1">
+                 <select class="size-select">
                     <option value="">Pilih Ukuran</option>
                     <option value="36">36</option>
                     <option value="37">37</option>
@@ -416,7 +425,7 @@
                 <p class="price">Rp 699.999</p>
                 <p class="stock" data-stock="0">Stok: 0</p>
                 <div class="card-actions">
-                 <select class="size-select" data-id="flat1">
+                 <select class="size-select">
                     <option value="">Pilih Ukuran</option>
                     <option value="36">36</option>
                     <option value="37">37</option>
@@ -435,7 +444,7 @@
                 <p class="price">Rp 799.999</p>
                 <p class="stock" data-stock="7">Stok: 7</p>
                 <div class="card-actions">
-                 <select class="size-select" data-id="flat1">
+                 <select class="size-select">
                     <option value="">Pilih Ukuran</option>
                     <option value="36">36</option>
                     <option value="37">37</option>
