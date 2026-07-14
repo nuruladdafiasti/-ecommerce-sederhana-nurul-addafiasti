@@ -7,7 +7,7 @@
 | Nama | Nurul Addafi Asti |
 | NIM | 209250221 |
 | Kelas | Administrasi Bisnis 3 |
-| Mata Kuliah | kAIT II |
+| Mata Kuliah | KAIT II |
 | Dosen Pengampu | Yoki Oktorian Sukardi S.Kom., M.A.B. |
 | Program Studi | Administrasi Bisnis |
 | Perguruan Tinggi | International Women University |
@@ -151,5 +151,3 @@ Website telah terintegrasi dengan **Google Analytics (dummy)** melalui `gtag.js`
 
 ---
 
-**Kontak:** nuruladdafiasti@gmail.com | +62 896 5263 8714
-**Live Demo:** https://nuruladdafiasti.github.io/-ecommerce-sederhana-nurul-addafiasti/
