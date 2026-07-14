@@ -882,19 +882,21 @@ footer {
 .search-box input::placeholder {
     color: #888;
 }
+
 .filter-row {
     display: flex;
     gap: 12px;
-    justify-content: center;
+    justify-content: center;   /* pusatkan grup, bukan sebar ke ujung */
     align-items: center;
     flex-wrap: wrap;
     margin-bottom: 25px;
 }
 
 .filter-row .search-box {
-    margin-bottom: 0;
-    flex: 1;
-    min-width: 200px;
+    margin: 0;              /* hapus auto-margin lama supaya tidak narik sendiri ke tengah */
+    max-width: 350px;
+    width: 100%;
+    flex: 0 1 350px;         /* lebar tetap, tidak "menelan" ruang priceFilter */
 }
 
 .price-filter {
@@ -906,6 +908,8 @@ footer {
     font-family: inherit;
     font-size: .9rem;
     cursor: pointer;
+    flex: 0 0 auto;           /* ukuran secukupnya, tidak melebar */
+    min-width: 160px;
 }
 
 .price-filter:focus {
@@ -915,5 +919,6 @@ footer {
 
 @media (max-width: 480px) {
     .filter-row { flex-direction: column; align-items: stretch; }
-    .filter-row .search-box { max-width: 100%; }
+    .filter-row .search-box,
+    .filter-row .price-filter { max-width: 100%; flex: 1; }
 }
