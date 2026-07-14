@@ -5,12 +5,12 @@
 | Keterangan | Detail |
 |---|---|
 | Nama | Nurul Addafi Asti |
-| NIM | *(isi NIM)* |
+| NIM | 209250221 |
 | Kelas | Administrasi Bisnis 3 |
-| Mata Kuliah | *(isi nama mata kuliah)* |
-| Dosen Pengampu | *(isi nama dosen)* |
-| Program Studi | *(isi program studi)* |
-| Perguruan Tinggi | *(isi nama kampus)* |
+| Mata Kuliah | kAIT II |
+| Dosen Pengampu | Yoki Oktorian Sukardi S.Kom., M.A.B. |
+| Program Studi | Administrasi Bisnis |
+| Perguruan Tinggi | International Women University |
 | Judul Tugas | Website E-Commerce Sederhana "The Dark Shoes" |
 | Link Repository | https://github.com/nuruladdafiasti/-ecommerce-sederhana-nurul-addafiasti |
 | Link Demo (GitHub Pages) | https://nuruladdafiasti.github.io/-ecommerce-sederhana-nurul-addafiasti/ |
